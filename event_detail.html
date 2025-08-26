@@ -13,7 +13,6 @@
     position: relative;
   }
 
-  /* Overlay on each slide */
   .carousel-item::after {
     content: "";
     position: absolute;
@@ -22,7 +21,7 @@
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.3);
-    /* black overlay with 40% opacity */
+   
   }
 
   .carousel-item img {
@@ -31,15 +30,16 @@
     width: 100%;
   }
 
-  /* Text visible over overlay */
+  
   .carousel-caption {
     z-index: 10;
     margin-bottom: 100px;
-    font-weight: 30px;
+    font-size: 30px;
   }
 
-  .card:hover {
-    background-color: rgb(245, 162, 189);
+
+  body{
+    background-color: rgb(241, 156, 184);
   }
 </style>
 
@@ -111,9 +111,12 @@
             </div>
           </div>
           <div class="carousel-item">
-            <img src="images/c6.jpeg" class="d-block w-100" alt="Event 3">
+            <img src="images/c3.jpg" class="d-block w-100" alt="Event 3">
+             <div class="carousel-caption d-none d-md-block text-center">
+            <h5>Corporate events</h5>
+            <p>We manage professional corporate events with perfection</p>
           </div>
-
+</div>
 
         </div>
 
@@ -134,15 +137,16 @@
 
   <!-- card section  start-->
   <section>
+    <!-- wedding card start -->
     <h2 class="text-center">Upcoming events</h2>
     <div class="container">
       <div class="row">
         <h3> <i>Wedding plan</i></h3>
         <div class="col-md-4">
-          <div class="card h-50 shadow">
+          <div class="card h-100 shadow">
             <img src="images/wedding8.webp" class="card-img-top img-responsive" alt="...">
             <div class="card-body">
-              <h5 class="card-title">Weddings</h5>
+              <h5 class="card-title">Wedding Event</h5>
               <p class="card-text">Turning your dream wedding into a beautiful reality</p>
               <a href="registration.html" class="btn btn-outline-success">Register Now</a>
             </div>
@@ -152,7 +156,7 @@
           <div class="card h-100 shadow">
             <img src="images/wedding3.webp" class="card-img-top img-responsive" alt="...">
             <div class="card-body">
-              <h5 class="card-title">wedding</h5>
+              <h5 class="card-title">wedding Event</h5>
               <p class="card-text">Elegant weddings with theme décor and complete planning.</p>
               <a href="registration.html" class="btn btn-outline-success">Register Now</a>
             </div>
@@ -162,7 +166,7 @@
           <div class="card h-100 shadow">
             <img src="images/wedding5.avif" class="card-img-top img-responsive" alt="...">
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
+              <h5 class="card-title">Wedding Events</h5>
               <p class="card-text">Where culture meets celebration – your wedding, our planning.”</p>
               <a href="registration.html" class="btn btn-outline-success">&#128205;Register Now</a>
             </div>
@@ -172,51 +176,81 @@
     </div>
 
     <!-- card section end -->
-    <!-- birthday cards -->
-    <div class="container">
-
-      <div class="row">
-        <h3><i>Birthday</i></h3>
-        <div class="col-md-4">
-          <div class="card" style=>
-            <img src="images/b-day2.jpg" class="card-img-top" alt="...">
+    <!-- birthday cards start -->
+             <div class="container mt-4">
+              <div class="row">
+                <h3> <i>Birthday Events</i></h3>
+                <div class="col-md-4">
+                            <div class="card h-100 shadow">
+            <img src="images/b_card4.jpg" class="card-img-top img-responsive" alt="...">
             <div class="card-body">
-              <h5 class="card-title">Birthday parties</h5>
-              <p class="card-text">From balloons to cakes, we plan it all for you.</p>
-              <a href="registration.html" class="btn btn-primary">Register Now</a>
+              <h5 class="card-title">Birthday</h5>
+              <p class="card-text">celebrate our day</p>
+              <a href="registration.html" class="btn btn-outline-success">Register Now</a>
             </div>
           </div>
-        </div>
-        <div class="col-md-4">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-4">
-                <div class="card" style=>
-                  <img src="images/b-day7.webp" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Birthday parties</h5>
-                    <p class="card-text">Party vibes, endless smiles, unforgettable moments.</p>
-                    <a href="registration.html" class="btn btn-primary">Register Now</a>
-                  </div>
+                </div>
+                <div class="col-md-4">
+                            <div class="card h-100 shadow">
+            <img src="images/b_card3.jpg" class="card-img-top img-responsive" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Birthday</h5>
+              <p class="card-text"> celebrate our day</p>
+              <a href="registration.html" class="btn btn-outline-success">Register Now</a>
+            </div>
+          </div>
+                </div>
+                <div class="col-md-4">
+                            <div class="card h-100 shadow">
+            <img src="images/b_card2.jpg" class="card-img-top img-responsive" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Weddings</h5>
+              <p class="card-text">Turning your dream wedding into a beautiful reality</p>
+              <a href="registration.html" class="btn btn-outline-success">Register Now</a>
+            </div>
+          </div>
                 </div>
               </div>
+             </div>
+                 <!-- card section end -->
+    <!--Corporate card start -->
+    
+             <div class="container mt-4">
+              <div class="row">
+                <h3> <i>Corporate Events</i></h3>
+                <div class="col-md-4">
+                            <div class="card h-100 shadow">
+            <img src="images/c2.jpg" class="card-img-top img-responsive" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Corporate Events</h5>
+              <p class="card-text">Expert planning for every corporate occasion</p>
+              <a href="registration.html" class="btn btn-outline-success">Register Now</a>
             </div>
-            <div class="col-md-4">
-              <div class="container">
-                <div class="row">
-                  <div class="col-md-4">
-                    <div class="card" style=>
-                      <img src="images/b-day1.jpg" class="card-img-top" alt="...">
-                      <div class="card-body">
-                        <h5 class="card-title">Birthday parties</h5>
-                        <p class="card-text">Your day, your way – we just add the sparkle.</p>
-                        <a href="registration.html" class="btn btn-primary">Register Now</a>
-                      </div>
-                    </div>
-                  </div>
+          </div>
+                </div>
+                <div class="col-md-4">
+                            <div class="card h-100 shadow">
+            <img src="images/c3.jpg" class="card-img-top img-responsive" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Corporate Events</h5>
+              <p class="card-text">professional planning and flawless execution.</p>
+              <a href="registration.html" class="btn btn-outline-success">Register Now</a>
+            </div>
+          </div>
+                </div>
+                <div class="col-md-4">
+                            <div class="card h-100 shadow">
+            <img src="images/c5.jpeg" class="card-img-top img-responsive" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Corporate Events</h5>
+              <p class="card-text">Making your corporate events successful & memorable</p>
+              <a href="registration.html" class="btn btn-outline-success">Register Now</a>
+            </div>
+          </div>
                 </div>
               </div>
-            </div>
+             </div>
+                 
   </section>
 
 
