@@ -21,6 +21,32 @@
   body{
     padding-top: 120px;
   }
+  .service-card {
+        border: none;
+        transition: all 0.3s ease;
+        background: #fff;
+        border-radius: 15px;
+        border: 2px solid black;
+      }
+      .service-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0px 8px 20px rgba(0,0,0,0.15);
+      }
+      .service-card img {
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        height: 220px;
+        object-fit: cover;
+      }
+      .service-card h5 {
+        font-family: 'Playfair Display', serif;
+        color: #d63384;
+        font-weight: bold;
+      }
+      .service-card p {
+        color: #555;
+        font-size: 1rem;
+      }
 </style>
 </head>
 <body>
@@ -64,22 +90,81 @@
       <p>Designing and executing events that exceed expectations</p>
     </div>
   <!-- card section -->
-  <div class="container">
+  <div class="container mt-4">
     <div class="row">
-      <div class="col-md-4">
-        <div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-  </div>
-</div>
+        <div class="col-md-4">
+          <div class="card service-card shadow-sm">
+            <img src="images/w_card.jpg" alt="Weddings">
+            <div class="card-body text-center">
+              <h5>Weddings</h5>
+              <p>From dream proposals to grand celebrations, we create unforgettable weddings tailored to your unique love story.</p>
+            </div>
+          </div>
       </div>
-      <div class="col-md-4"></div>
-      <div class="col-md-4"></div>
+      <div class="col-md-4">
+          <div class="card service-card shadow-sm">
+            <img src="images/c_ser.avif" alt="Corporate Events">
+            <div class="card-body text-center">
+              <h5>Corporate Events</h5>
+              <p>From conferences to product launches, we design professional events that inspire and impress your audience.</p>
+            </div>
+          </div>
+        </div>
+      <div class="col-md-4">
+          <div class="card service-card shadow-sm">
+            <img src="images/service_p1.jpeg" alt="Private Parties">
+            <div class="card-body text-center">
+              <h5>Private Parties</h5>
+              <p>Celebrate birthdays, anniversaries, and special moments with personalized décor and flawless coordination.</p>
+            </div>
+          </div>
     </div>
   </div>
 
+ <!--Footer-->
 
+<footer class="text-white text-center py-3 " style="background-color: black">
+   <section>
+   <div class="container">
+    <div class="row">
+    <div class="col-md-4">
+    <!--<div class="card" style="width: 18rem;">-->
+  <div class="card-body text-white" style="background-color: black">
+    <h1 class="card-title">Content</h1>
+    <ul class="content">
+      <a href="index.html">Home</a><br>
+      <a href="about.html">About Us</a><br>
+      <a href="services.html">Services</a><br>
+      <a href="event_detail.html">Events</a><br>
+      <a href="photos.html">Gallery</a><br>
+      <a href="registration.html">Registration</a><br>
+      <a href="contact.html">Contact</a>
+    </ul>
+  </div>
+    </div>
+  <div class="col-md-4">
+    <h2>Contact Information</h2>
+    <p>📍123 Celebration Avenue,Mumbai,India</p>
+    <p>📞+91 9876543210</p>
+    <p>✉️ info@everafterplanners.com</p>
+  </div>
+          <div class="col-md-3">
+            <h2>Social media</h2>
+            <a href="https://r.search.yahoo.com/_ylt=Awr1RXIeIqhoLgIAgJS7HAx.;_ylu=Y29sbwNzZzMEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1757058847/RO=10/RU=https%3a%2f%2fwww.instagram.com%2f/RK=2/RS=5AFKXg2D.zD5vOjYsuXkZAiAVH0-">
+            <i class="bi bi-instagram"></i></a>Instagram account<br>
+            <a href="https://r.search.yahoo.com/_ylt=AwrKFbOyIahoGwIAmBO7HAx.;_ylu=Y29sbwNzZzMEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1757058738/RO=10/RU=http%3a%2f%2fwww.facebook.com%2flogin.php/RK=2/RS=7Mjy7TJ7st3Ye8ODpJ4TLv8AeAE-">
+            <i class="bi bi-facebook"></i>
+            </a>Facebook account<br>
+            <a
+              href="https://r.search.yahoo.com/_ylt=Awr1TWlVtaZo9gEArw.7HAx.;_ylu=Y29sbwNzZzMEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1756965461/RO=10/RU=https%3a%2f%2ftwitter.com%2f%3flang%3den-in/RK=2/RS=noz_KhdddNoxeV1Y7k841HheFeY-">
+              <i class="bi bi-twitter"></i></a> Twitter account
+          </div>
+</div>
+</div>
+  <hr>
+    <p class="mb-0">© 2025 EverAfter Planners | Designed with ❤️ for your special moments</p>
+   </section>
+</footer>
 
 
 
