@@ -11,6 +11,7 @@
      <!--header start-->
   <header>
     <!-- navbar start -->
+    
     <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm fixed-top">
       <div class="container">
         <img src="images/logo1.png" width="200" height="100" class="me-2" alt="Logo">
@@ -21,13 +22,13 @@
           <ul class="navbar-nav ms-auto">
             <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
             <li class="nav-item"><a class="nav-link " href="about.html">About Us</a></li>
-            <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+            <li class="nav-item"><a class="nav-link  " href="services.html">Services</a></li>
             <!-- Gallery Dropdown -->
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle active fw-bold text-pink" href="#" role="button" data-bs-toggle="dropdown">Gallery</a>
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Gallery</a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#photos">Photos</a></li>
-                <li><a class="dropdown-item nav-linkactive fw-bold text-pink" href="#videos">Videos</a></li>
+                <li><a class="dropdown-item" href="photos.html">Photos</a></li>
+                <li><a class="dropdown-item nav-link active fw-bold " href="videos.html">Videos</a></li>
               </ul>
             </li>
             <li class="nav-item"><a class="nav-link " href="event_detail.html">Events</a></li>
@@ -37,12 +38,15 @@
         </div>
       </div>
     </nav>
+    
     <!-- navbar end -->
   </header>
 
      <!--Footer-->
 
-<footer class="text-white text-center py-3" style="background-color: black">
+<!--Footer-->
+
+<footer class="text-white text-center py-3 mt-3" style="background-color: black">
    <section>
    <div class="container">
     <div class="row">
@@ -50,41 +54,48 @@
     <!--<div class="card" style="width: 18rem;">-->
   <div class="card-body text-white" style="background-color: black">
     <h1 class="card-title">Content</h1>
-    <ul class="content">
-      <a href="index.html">Home</a><br>
-      <a href="about.html">About Us</a><br>
-      <a href="services.html">Services</a><br>
-      <a href="event_detail.html">Events</a><br>
-      <a href="photos.html">Gallery</a><br>
-      <a href="registration.html">Registration</a><br>
-      <a href="contact.html">Contact</a>
-    </ul>
+   <ul class="list-unstyled">
+  <li class="mb-2"><a href="index.html" class="text-white text-decoration-none">Home</a></li>
+  <li class="mb-2"><a href="about.html" class="text-white text-decoration-none">About Us</a></li>
+  <li class="mb-2"><a href="services.html" class="text-white text-decoration-none">Services</a></li>
+  <li class="mb-2"><a href="event_detail.html" class="text-white text-decoration-none">Events</a></li>
+  <li class="mb-2"><a href="photos.html" class="text-white text-decoration-none">Gallery</a></li>
+  <li class="mb-2"><a href="registration.html" class="text-white text-decoration-none">Registration</a></li>
+  <li><a href="contact.html" class="text-white text-decoration-none">Contact</a></li>
+</ul>
   </div>
     </div>
-  <div class="col-md-4">
+  <div class="col-md-3">
     <h2>Contact Information</h2>
-    <p>📍123 Celebration Avenue,Mumbai,India</p>
-    <p>📞+91 9876543210</p>
-    <p>✉️ info@everafterplanners.com</p>
+    <i class="bi bi-geo-alt-fill" style="color:red; font-size:1.3rem;"></i>
+    123 Celebration Avenue, Mumbai, India
+    <p><i class="bi bi-telephone-fill" style="color:green; font-size:1.3rem;"></i> +91 9876543210</p>
+    <p><i class="bi bi-envelope-fill"></i> info@everafterplanners.com</p>
   </div>
-          <div class="col-md-3">
-            <h2>Social media</h2>
-            <a href="https://r.search.yahoo.com/_ylt=Awr1RXIeIqhoLgIAgJS7HAx.;_ylu=Y29sbwNzZzMEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1757058847/RO=10/RU=https%3a%2f%2fwww.instagram.com%2f/RK=2/RS=5AFKXg2D.zD5vOjYsuXkZAiAVH0-">
-            <i class="bi bi-instagram"></i></a>Instagram account<br>
-            <a href="https://r.search.yahoo.com/_ylt=AwrKFbOyIahoGwIAmBO7HAx.;_ylu=Y29sbwNzZzMEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1757058738/RO=10/RU=http%3a%2f%2fwww.facebook.com%2flogin.php/RK=2/RS=7Mjy7TJ7st3Ye8ODpJ4TLv8AeAE-">
-            <i class="bi bi-facebook"></i>
-            </a>Facebook account<br>
-            <a
-              href="https://r.search.yahoo.com/_ylt=Awr1TWlVtaZo9gEArw.7HAx.;_ylu=Y29sbwNzZzMEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1756965461/RO=10/RU=https%3a%2f%2ftwitter.com%2f%3flang%3den-in/RK=2/RS=noz_KhdddNoxeV1Y7k841HheFeY-">
-              <i class="bi bi-twitter"></i></a> Twitter account
-          </div>
+        <div class="col-md-4">
+  <h2>Social media</h2>
+  <div class="d-flex justify-content-center gap-3"> <!-- flex container with gap -->
+    <a href="https://www.instagram.com/" target="_blank" style="color:#E1306C;" class="fs-3">
+      <i class="bi bi-instagram"></i>
+    </a>
+    <a href="https://www.facebook.com/" target="_blank" style="color:#1877F2;" class="fs-3">
+      <i class="bi bi-facebook"></i>
+    </a>
+    <a href="https://twitter.com/" target="_blank" style="color:#1DA1F2;" class="fs-3">
+      <i class="bi bi-twitter"></i>
+    </a>
+  </div>
 </div>
+</div>
+
 </div>
   <hr>
-    <p class="mb-0">© 2025 EverAfter Planners | Designed with ❤️ for your special moments</p>
+    <p class="mb-0">© 2025 EverAfter Planners | Designed with &#10084;for your special moments</p>
    </section>
 </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous">
     </script>
 </body>
+
 </html>
