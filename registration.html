@@ -70,6 +70,7 @@
       }
       .content{
         color: black;
+        text-decoration: none;
       }
       .content:hover{
         color: azure;
@@ -82,6 +83,7 @@
     footer a {
       color: white;
       transition: color 0.3s;
+      text-decoration: none;
     }
     footer a:hover {
       color: #d63384;
@@ -149,6 +151,24 @@
             <input type="text" class="form-control" placeholder="Enter your city" required>
           </div>
         </div>
+        <div class="row">
+          
+          <div class="col-md-12">
+             <label class="form-label">Gender</label><br>
+            <div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+  <label class="form-check-label" for="inlineRadio1">Male</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+  <label class="form-check-label" for="inlineRadio2">Female</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+  <label class="form-check-label" for="inlineRadio2">Other</label>
+</div>
+          </div>
+        </div>
 
         <!-- event detail -->
         <h4 class="mb-3 fw-bold text-pink">Event Details</h4>
@@ -197,6 +217,16 @@
             <input type="file" class="form-control">
             </div>
             </div>
+            <div class="row">
+          <div class="col-md-12">
+            <div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+  <label class="form-check-label" for="defaultCheck1">
+    I agree to the terms & conditions
+  </label>
+</div>
+          </div>
+        </div>
             <!-- Submit -->
           <div class="text-center">
             <button type="submit" class="btn btn-submit">Submit Registration</button>
@@ -215,39 +245,50 @@
     <div class="col-md-4">
     <!--<div class="card" style="width: 18rem;">-->
   <div class="card-body text-white" style="background-color: black">
-    <h1 class="card-title">Content</h1>
-    <ul class="content">
+    <h1 class="card-title">Quick Links</h1>
+    <div class="row">
+      <div class="col-md-6">
+        <ul class="content text-decoration-none">
       <a href="index.html">Home</a><br>
       <a href="about.html">About Us</a><br>
       <a href="services.html">Services</a><br>
       <a href="event_detail.html">Events</a><br>
+    </ul>
+      </div>
+      <div class="col-md-6">
+        <ul class="content  text-decoration-none">
       <a href="photos.html">Gallery</a><br>
       <a href="registration.html">Registration</a><br>
       <a href="contact.html">Contact</a>
     </ul>
+      </div>
+    </div>
   </div>
     </div>
-  <div class="col-md-4">
-            <h2>Contact Information</h2>
-            <p><i class="bi bi-geo-fill"></i> 123 Celebration Avenue,Mumbai,India</p>
-            <p><i class="bi bi-telephone-fill"></i> +91 9876543210</p>
-            <p><i class="bi bi-envelope"></i> info@everafterplanners.com</p>
-          </div>
-          <div class="col-md-3">
-            <h2>Social media</h2>
-            <a
-              href="https://r.search.yahoo.com/_ylt=Awr1RXIeIqhoLgIAgJS7HAx.;_ylu=Y29sbwNzZzMEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1757058847/RO=10/RU=https%3a%2f%2fwww.instagram.com%2f/RK=2/RS=5AFKXg2D.zD5vOjYsuXkZAiAVH0-">
-              <i class="bi bi-instagram"></i></a>Instagram account<br>
-            <a
-              href="https://r.search.yahoo.com/_ylt=AwrKFbOyIahoGwIAmBO7HAx.;_ylu=Y29sbwNzZzMEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1757058738/RO=10/RU=http%3a%2f%2fwww.facebook.com%2flogin.php/RK=2/RS=7Mjy7TJ7st3Ye8ODpJ4TLv8AeAE-">
-              <i class="bi bi-facebook"></i>
-            </a>Facebook account<br>
-            <a
-              href="https://r.search.yahoo.com/_ylt=Awr1TWlVtaZo9gEArw.7HAx.;_ylu=Y29sbwNzZzMEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1756965461/RO=10/RU=https%3a%2f%2ftwitter.com%2f%3flang%3den-in/RK=2/RS=noz_KhdddNoxeV1Y7k841HheFeY-">
-              <i class="bi bi-twitter"></i></a> Twitter account
-          </div>
-        </div>
-      </div>
+ <div class="col-md-4">
+    <h2>Contact Information</h2>
+    <i class="bi bi-geo-alt-fill" style="color:red; font-size:1.3rem;"></i>
+    123 Celebration Avenue, Mumbai, India
+    <p><i class="bi bi-telephone-fill" style="color:green; font-size:1.3rem;"></i> +91 9876543210</p>
+    <p><i class="bi bi-envelope-fill"></i> info@everafterplanners.com</p>
+  </div>
+        <div class="col-md-4">
+  <h2>Social media</h2>
+  <div class="d-flex justify-content-center gap-3"> <!-- flex container with gap -->
+    <a href="https://www.instagram.com/" target="_blank" style="color:#E1306C;" class="fs-3">
+      <i class="bi bi-instagram"></i>
+    </a>
+    <a href="https://www.facebook.com/" target="_blank" style="color:#1877F2;" class="fs-3">
+      <i class="bi bi-facebook"></i>
+    </a>
+    <a href="https://twitter.com/" target="_blank" style="color:#1DA1F2;" class="fs-3">
+      <i class="bi bi-twitter"></i>
+    </a>
+  </div>
+</div>
+</div>
+
+</div>
       <hr>
       <p class="mb-0">© 2025 EverAfter Planners | Designed with <i class="bi bi-heart-fill"></i> for your special moments</p>
     </section>
