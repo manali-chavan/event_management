@@ -1,207 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>EverAfter Planners</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
-    .content {
-      color: black;
+    /* Global Styles */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #fff;
+      overflow-x: hidden;
     }
 
-    .hero {
+    /* Navbar */
+    .navbar-nav .nav-link {
+      position: relative;
+      transition: color 0.3s;
+    }
+    .navbar-nav .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
       background-color: #d63384;
+      left: 0;
+      bottom: -5px;
+      transition: width 0.3s;
+    }
+    .navbar-nav .nav-link:hover::after {
+      width: 100%;
+    }
+    .navbar-nav .nav-link:hover {
+      color: #d63384;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #d63384, #ff80b5);
       text-align: center;
+      color: white;
+      height: 65vh;
+      display: flex;
       align-items: center;
       justify-content: center;
-      color: white;
-      height: 60vh;
-      padding: 10px 30px;
-      display: flex;
+      animation: fadeIn 1s ease-in-out;
     }
-
     .hero h1 {
+      font-size: 3.5rem;
       font-weight: bold;
-      font-size: 50px;
+      animation: slideDown 1.2s ease-in-out;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin-top: 10px;
     }
 
-    .hero text {
-      font-weight: 100;
+    /* Fade In & Slide Down Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes slideDown {
+      from { transform: translateY(-30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
     }
 
-    .text {
-      word-spacing: 10px;
-    }
-
+    /* Story Section */
     .story-img {
       border-radius: 15px;
-      box-shadow: 0px 6px 15px black;
+      box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s;
     }
-
+    .story-img:hover {
+      transform: scale(1.03);
+    }
     .story-title {
-      font-size: 30px;
-      font-weight: bold;
       color: #d63384;
+      font-weight: bold;
+      font-size: 2rem;
     }
 
-    .story-text {
-      word-spacing: 10px;
-    }
-
-    .vision-mission {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 30px;
-      margin-top: 30px;
-      justify-content: center;
-      text-align: center;
-    }
-
-    .text-v-m {
-      word-spacing: 5px;
-    }
-
+    /* Vision & Mission */
     .box {
-      background-color: rgb(232, 205, 225);
+      background: white;
       border-radius: 12px;
-      box-shadow: 0px 6px 15px black;
+      box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
       padding: 20px;
-      transition: 0.3s;
-      margin-bottom: 30px;
+      transition: all 0.3s ease;
     }
-
     .box:hover {
-      transform: scale(1.03);
+      transform: translateY(-8px);
+      box-shadow: 0px 8px 20px rgba(0,0,0,0.2);
     }
 
-    @media(max-width:768px) {
-      .vision-mission {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .vision-mission-title {
-      font-size: 30px;
-      font-weight: bold;
-      color: #d63384;
-      text-align: center;
-      justify-content: center;
-    }
-
+    /* Values */
     .value-card {
-      border: None;
+      background: white;
       border-radius: 12px;
-      background-color: white;
       padding: 20px;
-      margin-bottom: 30px;
-      transition: 0.3s;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-
     .value-card:hover {
-      transform: scale(1.03);
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     }
 
-    @media(max-width:768px) {
-      .value-card {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .value {
-      background-color: rgb(245, 232, 240);
-
-    }
-
-    .value-title {
-      font-size: 30px;
-      font-weight: bold;
-      color: #d63384;
-      text-align: center;
-      justify-content: center;
-    }
-
-    .value-text {
-      word-spacing: 5px;
-    }
-
-    .icon-box {
-      font-weight: 500;
-      font-size: 40px;
-    }
-
-    .text {
-      font-size: bold;
-    }
-
+    /* Team Section */
     .team_card {
       border: none;
-      background-color: rgb(241, 222, 235);
+      background: #f8eaf2;
       border-radius: 12px;
-      color: black;
-      padding: 20px;
-      margin-bottom: 30px;
-      transition: 0.3s ease;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
-
     .team_card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0px 6px 15px black;
+      transform: translateY(-10px);
+      box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
     }
-
     .team_img {
       height: 120px;
       width: 120px;
-      border-radius: 15px;
-      box-shadow: 0px 6px 15px black;
+      border-radius: 50%;
+      box-shadow: 0px 6px 15px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+    }
+    .team_card:hover .team_img {
+      transform: scale(1.1);
+      box-shadow: 0px 8px 20px rgba(0,0,0,0.5);
     }
 
-    .team-work {
-      font-size: bold;
-    }
-
-    .section-title {
-      font-size: 30px;
-      font-weight: bold;
-      color: #d63384;
+    /* Why Choose Us */
+    .why_us {
+      background: #f5e8f0;
+      padding: 40px 20px;
       text-align: center;
-      justify-content: center;
     }
-    .why_us_text{
-      word-spacing: 5px;
-      font-weight: 300;
-      font-size: 20px;
-      margin-bottom: 1rem;
+    .why_us_text {
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: auto;
     }
-    .why_us{
-      background-color: rgb(232, 205, 225);
+
+    /* Footer */
+    footer {
+      background: #000;
+      color: white;
+    }
+    footer a {
+      color: white;
+      transition: color 0.3s;
+    }
+    footer a:hover {
+      color: #d63384;
     }
   </style>
 </head>
-
 <body>
 
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm fixed-top">
     <div class="container">
-      <img src="images/logo1.png" width="200" height="100" class="me-2" alt="Logo">
+      <img src="images/logo1.png" width="180" height="80" alt="Logo">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navMenu">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link active fw-bold text-pink" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link active" href="about.html">About Us</a></li>
           <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-          <!-- Gallery Dropdown -->
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Gallery</a>
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Gallery</a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#photos">Photos</a></li>
-              <li><a class="dropdown-item" href="#videos">Videos</a></li>
+              <li><a class="dropdown-item" href="photos.html">Photos</a></li>
+              <li><a class="dropdown-item" href="videos.html">Videos</a></li>
             </ul>
           </li>
           <li class="nav-item"><a class="nav-link" href="event_detail.html">Events</a></li>
@@ -212,177 +185,134 @@
     </div>
   </nav>
 
-  </header>
-  <!--header end-->
-  <!-- Hero section start -->
+  <!-- Hero Section -->
   <section class="hero mb-3">
     <div>
       <h1>About EverAfter Planners</h1>
-      <p class="text">"Designing memorable events with passion and 2 years of dedication."</p>
+      <p>Designing memorable events with passion and 2 years of dedication.</p>
     </div>
   </section>
-  <!-- Hero section end-->
 
-  <!-- Our Story start -->
-  <section class="container">
-    <div class="row">
+  <!-- Our Story -->
+  <section class="container py-4">
+    <div class="row align-items-center">
       <div class="col-md-6 mb-3">
         <img src="images/about_img.avif" class="img-fluid story-img" alt="Our story">
       </div>
       <div class="col-md-6 mb-3">
-        <h2 class="story-title">Our story</h2>
-        <p class="story-text">
-          EverAfter Planners began with a simple dream – to design events that go beyond just celebration, creating
-          timeless experiences filled with beauty, joy, and meaning. What started in 2018 as a small initiative quickly
-          blossomed into a full-fledged event planning company known for creativity, attention to detail, and heartfelt
-          service.
-
-          From intimate family gatherings to extravagant weddings, our journey has been about bringing visions to life.
-          Every event we plan is crafted with passion, professionalism, and a deep understanding of our clients’ unique
-          stories. We believe every moment deserves to be unforgettable, which is why we put our heart into every detail
-          — from décor and themes to flawless execution.
-
-          Over the years, we’ve had the honor of helping hundreds of couples, families, and organizations celebrate
-          milestones that matter most. Our success lies not only in beautiful designs but also in building lasting
-          relationships with our clients, making them feel like a part of the EverAfter family.
-
-          With a strong commitment to innovation and excellence, EverAfter Planners continues to evolve, always striving
-          to turn dreams into magical realities — one event at a time.
-        </p>
+        <h2 class="story-title">Our Story</h2>
+        <p>EverAfter Planners began with a dream to design events beyond celebration — creating timeless, magical experiences. Since 2018, we've grown from a small initiative to a well-known event company celebrated for creativity and heartfelt service.</p>
       </div>
     </div>
   </section>
-  <!-- Our Story end -->
 
-  <!-- Vision and Mission Section start-->
-  <section class="container">
-    <h2 class="vision-mission-title">Our Vision - Mission</h2>
-    <div class="vision-mission">
-      <div class="box">
-        <h2>Our Vision</h2>
-        <p class="text-v-m">
-          To become the most trusted event planning partner, known for transforming dreams into
-          unforgettable celebrations with creativity, elegance, and excellence.
-        </p>
+  <!-- Vision and Mission -->
+  <section class="container py-4">
+    <h2 class="text-center mb-4" style="color:#d63384;">Our Vision & Mission</h2>
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="box">
+          <h3>Our Vision</h3>
+          <p>To become the most trusted event planning partner, known for turning dreams into unforgettable celebrations with creativity and elegance.</p>
+        </div>
       </div>
-
-      <div class="box">
-        <h2>Our Mission</h2>
-        <p class="text-v-m">
-          To design and deliver memorable experiences that exceed client expectations,
-          ensuring every detail is perfect — from concept to execution.
-        </p>
+      <div class="col-md-6">
+        <div class="box">
+          <h3>Our Mission</h3>
+          <p>To design and deliver memorable experiences that exceed client expectations from concept to flawless execution.</p>
+        </div>
       </div>
     </div>
   </section>
-  <!-- Vision and Mission Section end-->
-  <!-- Our Value start-->
-  <section class="value">
+
+  <!-- Core Values -->
+  <section class="py-4" style="background:#f5e8f0;">
     <div class="container">
-      <h2 class="value-title"> Our Core Value</h2>
-      <div class="row">
+      <h2 class="text-center mb-4" style="color:#d63384;">Our Core Values</h2>
+      <div class="row text-center g-4">
         <div class="col-md-4">
-          <div class="value-card text-center">
-            <div class="icon-box">💡</div>
+          <div class="value-card">
+            <i class="bi bi-lightbulb-fill text-warning fs-1"></i>
             <h5>Creativity</h5>
-            <p class="value-text">
-              We bring unique, fresh, and elegant ideas to make your event one-of-a-kind.
-            </p>
+            <p>We bring unique and elegant ideas to make every event special.</p>
           </div>
         </div>
         <div class="col-md-4">
-          <div class="value-card text-center">
-            <div class="icon-box">🤝</div>
+          <div class="value-card">
+            <i class="bi bi-people-fill text-warning fs-1"></i>
             <h5>Commitment</h5>
-            <p class="value-text">
-              We promise dedication and seamless execution for every project we handle.
-            </p>
+            <p>Dedicated to delivering seamless experiences for our clients.</p>
           </div>
         </div>
         <div class="col-md-4">
-          <div class="value-card text-center">
-            <div class="icon-box">🎉</div>
+          <div class="value-card">
+            <i class="bi bi-trophy-fill text-warning fs-1"></i>
             <h5>Experience</h5>
-            <p class="value-text">
-              Years of experience allow us to manage events with ease and perfection.
-            </p>
+            <p>Years of expertise ensure flawless management and execution.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
-  <!-- Our Value end-->
 
-  <!-- Meet Our Team start -->
-  <section class="container py-1">
-    <h2 class="text-center section-title p-4 mb-3">Meet Our Team</h2>
-    <div class="row">
-      <div class="col-md-3">
-        <div class="team_card text-center p-4">
-          <img src="images/pratiksha_team.jpg" class="rounded-circle mx-auto mb-3 team_img" alt="Pratiksha Kale"
-            height="120px" width="120px">
+  <!-- Meet Our Team -->
+  <section class="container py-5">
+    <h2 class="text-center mb-4" style="color:#d63384;">Meet Our Team</h2>
+    <div class="row text-center g-4">
+      <div class="col-md-4">
+        <div class="team_card p-4">
+          <img src="images/pratiksha_team.jpg" class="team_img mb-3" alt="Pratiksha Kale">
           <h5>Pratiksha Kale</h5>
-          <p class="team_work">Founder & Creative Director</p>
+          <p>Founder & Creative Director</p>
         </div>
       </div>
-      <div class="col-md-3">
-        <div class="team_card text-center p-4">
-          <img src="images/" class="rounded-circle mx-auto mb-3 team_img" alt="Kalpesh chaudhary" height="120px"
-            width="120px">
-          <h5>Kalpesh chaudhary</h5>
-          <p class="team_work">Event Manager</p>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="team_card text-center p-4">
-          <img src="images/shreya_team.jpg" class="rounded-circle mx-auto mb-3 team_img" alt="Shreya Wadekar"
-            height="120px" width="120px">
+      <div class="col-md-4">
+        <div class="team_card p-4">
+          <img src="images/shreya_team.jpg" class="team_img mb-3" alt="Shreya Wadekar">
           <h5>Shreya Wadekar</h5>
-          <p class="team_work">Design & Décor Specialist</p>
+          <p>Design & Décor Specialist</p>
         </div>
       </div>
-      <div class="col-md-3">
-        <div class="team_card text-center p-4">
-          <img src="images/manali_team.jpg" class="rounded-circle mx-auto mb-3 team_img" alt="Manali Chavhan"
-            height="120px" width="120px">
+      <div class="col-md-4">
+        <div class="team_card p-4">
+          <img src="images/manali_team.jpg" class="team_img mb-3" alt="Manali Chavhan">
           <h5>Manali Chavhan</h5>
-          <p class="team_work">Logistics & Operations Head</p>
+          <p>Event Manager</p>
         </div>
       </div>
     </div>
   </section>
-  <!-- Meet Our Team end -->
-  <!-- Why Choose Us start -->
-   <section class="why_us">
+
+  <!-- Why Choose Us -->
+  <section class="why_us">
     <div class="container">
-      <h2 class="text-center section-title p-4">Why Choose Us?</h2>
-      <p class="why_us_text text-center"> At EverAfter Planners, we don’t just plan events – we craft memories that last a lifetime. 
-        From your very first meeting to the final goodbye, we ensure a stress-free, enjoyable, and unforgettable celebration.</p>
+      <h2 class="mb-4" style="color:#d63384;">Why Choose Us?</h2>
+      <p class="why_us_text">At EverAfter Planners, we don’t just plan events – we craft memories that last a lifetime. From your first consultation to the final goodbye, our team ensures a stress-free and unforgettable celebration.</p>
     </div>
-   </section>
-  <!-- Why Choose Us end -->
+  </section>
+
   <!--Footer-->
 
-  <footer class="text-white text-center py-3" style="background-color: black">
-    <section>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4">
-            <!--<div class="card" style="width: 18rem;">-->
-            <div class="card-body text-white" style="background-color: black">
-              <h1 class="card-title">Content</h1>
-              <ul class="content color-black">
-                <a href="index.html">Home</a><br>
-                <a href="about.html">About Us</a><br>
-                <a href="services.html">Services</a><br>
-                <a href="event_detail.html">Events</a><br>
-                <a href="photos.html">Gallery</a><br>
-                <a href="registration.html">Registration</a><br>
-                <a href="contact.html">Contact</a>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md-4">
+<footer class="text-white text-center py-3" style="background-color: black">
+   <section>
+   <div class="container">
+    <div class="row">
+    <div class="col-md-4">
+    <!--<div class="card" style="width: 18rem;">-->
+  <div class="card-body text-white" style="background-color: black">
+    <h1 class="card-title">Content</h1>
+    <ul class="content">
+      <a href="index.html">Home</a><br>
+      <a href="about.html">About Us</a><br>
+      <a href="services.html">Services</a><br>
+      <a href="event_detail.html">Events</a><br>
+      <a href="photos.html">Gallery</a><br>
+      <a href="registration.html">Registration</a><br>
+      <a href="contact.html">Contact</a>
+    </ul>
+  </div>
+    </div>
+  <div class="col-md-4">
             <h2>Contact Information</h2>
             <p><i class="bi bi-geo-fill"></i> 123 Celebration Avenue,Mumbai,India</p>
             <p><i class="bi bi-telephone-fill"></i> +91 9876543210</p>
@@ -392,24 +322,22 @@
             <h2>Social media</h2>
             <a
               href="https://r.search.yahoo.com/_ylt=Awr1RXIeIqhoLgIAgJS7HAx.;_ylu=Y29sbwNzZzMEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1757058847/RO=10/RU=https%3a%2f%2fwww.instagram.com%2f/RK=2/RS=5AFKXg2D.zD5vOjYsuXkZAiAVH0-">
-              <i class="bi bi-instagram"></i></a>Instagram account<br>
+              <i class="bi bi-instagram"></i></a>Instagram <br>
             <a
               href="https://r.search.yahoo.com/_ylt=AwrKFbOyIahoGwIAmBO7HAx.;_ylu=Y29sbwNzZzMEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1757058738/RO=10/RU=http%3a%2f%2fwww.facebook.com%2flogin.php/RK=2/RS=7Mjy7TJ7st3Ye8ODpJ4TLv8AeAE-">
               <i class="bi bi-facebook"></i>
-            </a>Facebook account<br>
+            </a>Facebook <br>
             <a
               href="https://r.search.yahoo.com/_ylt=Awr1TWlVtaZo9gEArw.7HAx.;_ylu=Y29sbwNzZzMEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1756965461/RO=10/RU=https%3a%2f%2ftwitter.com%2f%3flang%3den-in/RK=2/RS=noz_KhdddNoxeV1Y7k841HheFeY-">
-              <i class="bi bi-twitter"></i></a> Twitter account
+              <i class="bi bi-twitter"></i></a> Twitter 
           </div>
         </div>
       </div>
       <hr>
       <p class="mb-0">© 2025 EverAfter Planners | Designed with <i class="bi bi-heart-fill"></i> for your special moments</p>
     </section>
-  </footer>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous">
-    </script>
-</body>
+</footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
