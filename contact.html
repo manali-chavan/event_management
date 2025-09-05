@@ -91,15 +91,56 @@
       animation: fadeIn 1s ease-in-out;
     }
 
-    .hero h1 {
-      font-size: 3.5rem;
-      font-weight: bold;
-      animation: slideDown 1.2s ease-in-out;
+/* Contact Section */
+
+.form-control {
+  border-radius: 12px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  transition: 0.3s ease;
+}
+.form-control:focus {
+  border-color: #d63384;
+  box-shadow: 0 0 8px rgba(214, 51, 132, 0.3);
+}
+.btn-custom {
+  background: #d63384;
+  color: #fff;
+  border-radius: 30px;
+  padding: 10px 25px;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+}
+.btn-custom:hover {
+  background: #b1246a;
+  transform: scale(1.05);
+}
+/* Contact Info */
+.info-box {
+  background: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  margin-bottom: 25px;
+}
+
+/* Map Styling */
+.ratio iframe {
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/*get in touch */
+.card {
+      border: none;
+      background: #f8eaf2;
+      border-radius: 12px;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
 
-    .hero p {
-      font-size: 1.2rem;
-      margin-top: 10px;
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
     }
      </style>
 </head>
@@ -135,19 +176,19 @@
 
   <!-- Hero Section -->
   <!-- <main class=" hero py-5 mt-5">-->
-    <div class="hero mb-3">
-      
+    <section class="hero mb-3">
+    <div>
       <h1>Contact Us</h1>
       <p>We’d love to hear from you – let’s plan your perfect event</p>
-      
     </div>
+  </section>
 
     <!-- Contact Section -->
     <div class="container contact-section">
       <div class="row g-5">
         
         <!-- Contact Form -->
-        <div class="col-md-6">
+        <div class="col-md-6 card">
           <h2>Send Us a Message</h2>
           <form>
             <div class="mb-3">
@@ -168,21 +209,14 @@
 
         <!-- Contact Info + Map -->
         <div class="col-md-6">
-          <div class="info-box mb-4">
+          <div class="info-box mb-4 card">
             <h2>Get In Touch</h2>
-            <p><b>Address:</b> 123 Celebration Street, Surat, India</p>
+            <p><b>Address:</b> <p>123 Celebration Avenue,Andheri West,Mumbai-400053,India</p>
             <p><b>Phone:</b> +91 98765 43210</p>
             <p><b>Email:</b> info@everafterplanners.com</p>
           </div>
-          <div class="ratio ratio-16x9">
-            <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3670.084121284846!2d72.8311!3d21.1702!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04e594a6b5e45%3A0x9bfb0f6f6c10ef25!2sSurat%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1692601234567" 
-              width="600" 
-              height="450" 
-              style="border:0;" 
-              allowfullscreen="" 
-              loading="lazy">
-            </iframe>
+          <div class="ratio ratio-16x9 card">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d30154.38091775591!2d72.81747096961506!3d19.138445503032152!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sever%20after%20events%20123%20celebration%20avenue%2Candheri%20west%2Cmumbai-400053%2Cindia!5e0!3m2!1sen!2sin!4v1757054154428!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
       </div>
