@@ -8,13 +8,11 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
   <style>
-    
     /* Navbar */
     .navbar-nav .nav-link {
       position: relative;
       transition: color 0.3s;
     }
-
     .navbar-nav .nav-link::after {
       content: '';
       position: absolute;
@@ -25,23 +23,24 @@
       bottom: -5px;
       transition: width 0.3s;
     }
-
     .navbar-nav .nav-link:hover::after {
       width: 100%;
     }
-
     .navbar-nav .nav-link:hover {
       color: #d63384;
     }
+
     /* Carousel */
     .carousel-item {
       position: relative;
     }
     .carousel-item::after {
-     
+      content: ''; /* FIXED missing content */
       position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       background: rgba(0, 0, 0, 0.35);
     }
     .carousel-item img {
@@ -52,8 +51,7 @@
     .carousel-caption {
       z-index: 10;
       margin-bottom: 100px;
-    font-size: 30px;
-     
+      font-size: 30px;
       padding: 15px 20px;
     }
 
@@ -62,13 +60,14 @@
       color: #d63384;
       text-align: center;
       margin-top: 2rem;
+      text-transform: uppercase;
     }
     h3 {
-      color:white;
+      color: white;
       margin: 1rem 0;
     }
 
-    /* Divider style */
+    /* Divider */
     .section {
       width: 80px;
       height: 4px;
@@ -86,7 +85,7 @@
     }
     .card:hover {
       transform: scale(1.05);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     }
     .card img {
       height: 230px;
@@ -107,49 +106,58 @@
     footer a:hover {
       color: #d63384;
     }
-    footer h2, footer h1 {
+    footer h2, footer h1, footer h4 {
       color: #d63384;
       margin-bottom: 1rem;
     }
-    /* Quick Links Styling */
-.footer-links li a {
-  color: white;
-  text-decoration: none;
-  font-size: 1rem;
-  display: inline-block;
-  position: relative;
-  transition: color 0.3s ease, transform 0.3s ease;
-}
 
-/* Hover Effect - Underline Slide */
-.footer-links li a::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  display: block;
-  margin-top: 5px;
-  right: 0;
-  background: #d63384; /* Accent color */
-  transition: width 0.3s ease;
-  -webkit-transition: width 0.3s ease;
-}
+    /* Footer Quick Links */
+    .footer-links li a {
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      display: inline-block;
+      position: relative;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+    .footer-links li a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      display: block;
+      margin-top: 5px;
+      right: 0;
+      background: #d63384;
+      transition: width 0.3s ease;
+    }
+    .footer-links li a:hover::after {
+      width: 100%;
+      left: 0;
+    }
+    .footer-links li a:hover {
+      color: #d63384;
+      transform: translateX(3px);
+    }
 
-.footer-links li a:hover::after {
-  width: 100%;
-  left: 0;
-  background: #d63384;
-}
-
-.footer-links li a:hover {
-  color: #d63384; /* Text color on hover */
-  transform: translateX(3px); /* Small slide effect */
-}
+    /* Responsive */
+    @media (max-width: 768px) {
+      .carousel-caption {
+        font-size: 18px;
+        margin-bottom: 40px;
+      }
+      h2 {
+        font-size: 24px;
+      }
+      .card img {
+        height: 180px;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
+  <!-- Navbar -->
   <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm fixed-top">
       <div class="container">
@@ -187,35 +195,29 @@
         </div>
 
         <!-- Slides -->
-        <!-- Slides -->
-        <div class="carousel-inner shadow-sm ">
-          <div class="carousel-item active ">
-            <img src="images/event4.jpg" class="d-block w-100" alt="Event 1">
-            <div class="carousel-caption d-none d-md-block text-center ">
+        <div class="carousel-inner shadow-sm">
+          <div class="carousel-item active">
+            <img src="images/event4.jpg" class="d-block w-100" alt="Dream Wedding Event">
+            <div class="carousel-caption d-none d-md-block text-center">
               <h3>Dream Weddings</h3>
               <p>Making your day unforgettable</p>
-
             </div>
           </div>
           <div class="carousel-item">
-            <img src="images/b-day6.avif" class="d-block w-100" alt="Event 2">
+            <img src="images/b-day6.avif" class="d-block w-100" alt="Birthday Party">
             <div class="carousel-caption d-none d-md-block text-center">
-              <h3>Birthday parties</h3>
-            <hr class="mx-auto" style="width:80px; height:4px; background-color: #d63384; border:none; border-radius:4px;">
-
-
-              <p>celebrate our day</p>
-
+              <h3>Birthday Parties</h3>
+              <hr class="mx-auto" style="width:80px; height:4px; background-color: #d63384; border:none; border-radius:4px;">
+              <p>Celebrate your special day</p>
             </div>
           </div>
           <div class="carousel-item">
-            <img src="images/c3.jpg" class="d-block w-100" alt="Event 3">
-             <div class="carousel-caption d-none d-md-block text-center">
-            <h3>Corporate events</h3>
-            <p>We manage professional corporate events with perfection</p>
+            <img src="images/c3.jpg" class="d-block w-100" alt="Corporate Event">
+            <div class="carousel-caption d-none d-md-block text-center">
+              <h3>Corporate Events</h3>
+              <p>We manage professional corporate events with perfection</p>
+            </div>
           </div>
-</div>
-
         </div>
 
         <!-- Controls -->
@@ -232,272 +234,232 @@
   <!-- Upcoming Events -->
   <section>
     <h2>Upcoming Events</h2>
-    
     <div class="section"></div>
-   
-    <div class="container mt-4">
-      <!-- Example Row -->
-      <div class="row g-4">
-         <h4 class="ms-5"><i>Wedding </i></h4>
-        <!-- Wedding Example -->
-        <div class="col-md-4">
-<<<<<<< HEAD
-          <div class="card shadow">
-            <img src="images/event details2.jpg" alt="Wedding Plan">
-=======
-          <div class="card  h-100 shadow">
-            <img src="images/wedding3.webp" class="card-img-top img-responsive" alt="...">
->>>>>>> f31672f9bb7e574de71ca22df5c6bb2f78491b21
-            <div class="card-body">
-             <h6 class="card-title">&#128197;22th November 2025|&#128205;SambhajiNagar</h6>
-              <p class="card-text">Turning your dream wedding into a beautiful <br>reality</p>
-              <a href="registration.html" class="btn btn-outline-dark">Register Now</a>
-            </div>
-          </div>
-        </div>
-         <div class="col-md-4">
-          <div class="card shadow">
-            <img src="images/event details3.jpg" alt="Wedding Plan">
-            <div class="card-body">
-             <h6 class="card-title">&#128197;12 Janaury 2026|&#128205;Jalgaon</h6>
-              <p class="card-text">Elegant weddings with theme décor and complete planning.</p>
-              <a href="registration.html" class="btn btn-outline-dark">Register Now</a>
-            </div>
-          </div>
-        </div>
-         <div class="col-md-4">
-          <div class="card shadow">
-            <img src="images/wedding5.avif" alt="Wedding Plan">
-            <div class="card-body">
-              <h6 class="card-title">&#128197;21th November 2025|&#128205;Delhi</h6>
-              <p class="card-text">Where culture meets celebration – your wedding, our planning.”</p>
-              <a href="registration.html" class="btn btn-outline-dark">Register Now</a>
-            </div>
-          </div>
-        </div>
-        <!-- Add more event cards in same format -->
-      </div>
-    </div>
-  </section>
-
-    <!-- Upcoming Events -->
-  <section>
     
-   
     <div class="container mt-4">
-      <!-- Example Row -->
+      <!-- Wedding Events -->
+      <h4 class="ms-3 mb-3 text-uppercase fw-bold"><i>Wedding</i></h4>
       <div class="row g-4">
-        <h4><i>Birthday</i></h4>
-        <!-- Wedding Example -->
         <div class="col-md-4">
           <div class="card shadow">
-            <img src="images/b_card2.jpg" alt="Wedding Plan">
+            <img src="images/wedding3.webp" alt="Wedding in SambhajiNagar">
             <div class="card-body">
-              <h6 class="card-title">&#128197;30th August 2025|&#128205;Ahilyanagr</h6>
-              <p class="card-text">celebrate our day</p>
-              <a href="registration.html" class="btn btn-outline-dark">Register Now</a>
-            </div>
-          </div>
-        </div>
-         <div class="col-md-4">
-          <div class="card shadow">
-            <img src="images/b_card3.jpg" alt="Wedding Plan">
-            <div class="card-body">
-              <h6 class="card-title">&#128197;2nd sepetember 2025|&#128205;Rahata</h6>
-              <p class="card-text"> celebrate our day</p>
-              <a href="registration.html" class="btn btn-outline-dark">Register Now</a>
-            </div>
-          </div>
-        </div>
-         <div class="col-md-4">
-          <div class="card shadow">
-            <img src="images/b_card4.jpg" alt="Wedding Plan">
-            <div class="card-body">
-             <h6 class="card-title">&#128197;24th October 2025|&#128205;Nashik</h6>
+              <h6 class="card-title">&#128197; 22nd November 2025 | &#128205; SambhajiNagar</h6>
               <p class="card-text">Turning your dream wedding into a beautiful reality</p>
               <a href="registration.html" class="btn btn-outline-dark">Register Now</a>
             </div>
           </div>
         </div>
-        <!-- Add more event cards in same format -->
+
+        <div class="col-md-4">
+          <div class="card shadow">
+            <img src="images/event details3.jpg" alt="Wedding in Jalgaon">
+            <div class="card-body">
+              <h6 class="card-title">&#128197; 12th January 2026 | &#128205; Jalgaon</h6>
+              <p class="card-text">Elegant weddings with theme décor and complete planning.</p>
+              <a href="registration.html" class="btn btn-outline-dark">Register Now</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card shadow">
+            <img src="images/wedding5.avif" alt="Wedding in Delhi">
+            <div class="card-body">
+              <h6 class="card-title">&#128197; 21st November 2025 | &#128205; Delhi</h6>
+              <p class="card-text">Where culture meets celebration – your wedding, our planning.</p>
+              <a href="registration.html" class="btn btn-outline-dark">Register Now</a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
-    <!-- Upcoming Events -->
-  <section>
-    
-   
-    <div class="container mt-4">
-      <!-- Example Row -->
+
+  <!-- Birthday Events -->
+  <section class="mt-5">
+    <div class="container">
+      <h4 class="ms-3 mb-3 text-uppercase fw-bold"><i>Birthday</i></h4>
       <div class="row g-4">
-        <h4><i>Corporate</i> </h4>
-        <!-- Wedding Example -->
         <div class="col-md-4">
           <div class="card shadow">
-            <img src="images/c11.jpg" alt="Wedding Plan">
+            <img src="images/b_card2.jpg" alt="Birthday in Ahilyanagar">
             <div class="card-body">
-            <h6 class="card-title">&#128197;22th December 2025|&#128205; Surat</h6>
-              <p class="card-text">Expert planning for every corporate <br>occasion</p>
+              <h6 class="card-title">&#128197; 30th August 2025 | &#128205; Ahilyanagar</h6>
+              <p class="card-text">Celebrate your special day with us</p>
               <a href="registration.html" class="btn btn-outline-dark">Register Now</a>
             </div>
           </div>
         </div>
-         <div class="col-md-4">
+
+        <div class="col-md-4">
           <div class="card shadow">
-            <img src="images/c1.jpeg" alt="Wedding Plan">
+            <img src="images/b_card3.jpg" alt="Birthday in Rahata">
             <div class="card-body">
-             <h6 class="card-title">&#128197;5th November 2025|&#128205;Delhi</h6>
-              <p class="card-text">professional planning and flawless<br> execution.</p>
+              <h6 class="card-title">&#128197; 2nd September 2025 | &#128205; Rahata</h6>
+              <p class="card-text">A memorable birthday celebration</p>
               <a href="registration.html" class="btn btn-outline-dark">Register Now</a>
             </div>
           </div>
         </div>
-         <div class="col-md-4">
+
+        <div class="col-md-4">
           <div class="card shadow">
-            <img src="images/c3.jpg" alt="Wedding Plan">
+            <img src="images/b_card4.jpg" alt="Birthday in Nashik">
             <div class="card-body">
-             <h6 class="card-title">&#128197;15th October 2025|&#128205;Mumbai</h6>
+              <h6 class="card-title">&#128197; 24th October 2025 | &#128205; Nashik</h6>
+              <p class="card-text">Make your birthday unforgettable with themed parties</p>
+              <a href="registration.html" class="btn btn-outline-dark">Register Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Corporate Events -->
+  <section class="mt-5">
+    <div class="container">
+      <h4 class="ms-3 mb-3 text-uppercase fw-bold"><i>Corporate</i></h4>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card shadow">
+            <img src="images/c11.jpg" alt="Corporate Event in Surat">
+            <div class="card-body">
+              <h6 class="card-title">&#128197; 22nd December 2025 | &#128205; Surat</h6>
+              <p class="card-text">Expert planning for every corporate occasion</p>
+              <a href="registration.html" class="btn btn-outline-dark">Register Now</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card shadow">
+            <img src="images/c1.jpeg" alt="Corporate Event in Delhi">
+            <div class="card-body">
+              <h6 class="card-title">&#128197; 5th November 2025 | &#128205; Delhi</h6>
+              <p class="card-text">Professional planning and flawless execution</p>
+              <a href="registration.html" class="btn btn-outline-dark">Register Now</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card shadow">
+            <img src="images/c3.jpg" alt="Corporate Event in Mumbai">
+            <div class="card-body">
+              <h6 class="card-title">&#128197; 15th October 2025 | &#128205; Mumbai</h6>
               <p class="card-text">Making your corporate events successful & memorable</p>
               <a href="registration.html" class="btn btn-outline-dark">Register Now</a>
             </div>
-            </div>
           </div>
         </div>
-        
-        <!-- Add more event cards in same format -->
       </div>
     </div>
   </section>
+
   <!-- Past Events -->
-  <section>
-    <div class="container mt-5">
+  <section class="mt-5">
+    <div class="container">
       <h2>Past Events</h2>
       <div class="section"></div>
       <div class="row g-4">
         <div class="col-md-4">
           <div class="card shadow">
-            <img src="images/event4.jpg" alt="Past Wedding">
+            <img src="images/event4.jpg" alt="Past Wedding in Goa">
             <div class="card-body">
               <h6 class="card-title">Wedding</h6>
               <p class="card-text">Held on 22nd March 2024 in Goa</p>
-             <P>Experience a fairy-tale wedding with royal décor, live music, and unforgettable memories.</p>
+              <p>Experience a fairy-tale wedding with royal décor, live music, and unforgettable memories.</p>
             </div>
           </div>
         </div>
-         <div class="col-md-4">
+
+        <div class="col-md-4">
           <div class="card shadow">
-            <img src="images/b_card.jpg" alt="Past Wedding">
+            <img src="images/b_card.jpg" alt="Past Birthday in Goa">
             <div class="card-body">
               <h6 class="card-title">Birthday</h6>
               <p class="card-text">Held on 2nd June 2024 in Goa</p>
-             <P>Experience a fairy-tale wedding with royal décor, live music, and unforgettable memories.</p>
+              <p>A fun-filled birthday party with customized themes and entertainment.</p>
             </div>
           </div>
         </div>
-         <div class="col-md-4">
+
+        <div class="col-md-4">
           <div class="card shadow">
-            <img src="images/c_card1.webp" alt="Past Wedding">
+            <img src="images/c_card1.webp" alt="Past Corporate Event in Goa">
             <div class="card-body">
               <h6 class="card-title">Corporate</h6>
               <p class="card-text">Held on 1st May 2024 in Goa</p>
-             <P>Experience a fairy-tale wedding with royal décor, live music, and unforgettable memories.</p>
+              <p>Flawless execution of corporate meetings and events with perfect arrangements.</p>
             </div>
           </div>
         </div>
-        <!-- Repeat for Birthday & Corporate -->
       </div>
     </div>
   </section>
 
-    <!-- Footer -->
-  <footer class="text-white pt-5" style="background-color: #000;">
-    <section>
-      <div class="container">
-        <div class="row">
-
-          <!-- Logo & About Section -->
-          <div class="col-md-4 text-start mb-4">
-            <div class="d-flex align-items-center mb-3">
-              <img src="images/logo1.png" alt="EverAfter Planners Logo" width="80" height="60"
-                class="me-3 rounded-circle border border-light">
-              <h3 class="mb-0" style="color:#d63384; font-weight: bold;">EverAfter Planners</h3>
-            </div>
-            <p style="font-size: 0.95rem; line-height: 1.6;">
-              We create unforgettable memories by planning and managing stunning weddings, birthdays,
-              corporate events, and more. Our passion is turning your dream event into reality
-              with precision, creativity, and love.
-            </p>
-            <p style="font-size: 0.9rem; color: #ccc;">
-              Let us handle the details while you enjoy your special moments!
-            </p>
+  <!-- Footer -->
+  <footer class="text-white pt-5">
+    <div class="container">
+      <div class="row">
+        <!-- About -->
+        <div class="col-md-4 text-start mb-4">
+          <div class="d-flex align-items-center mb-3">
+            <img src="images/logo1.png" alt="EverAfter Planners Logo" width="80" height="60"
+              class="me-3 rounded-circle border border-light">
+            <h3 class="mb-0" style="color:#d63384; font-weight: bold;">EverAfter Planners</h3>
           </div>
-
-          <!-- Quick Links -->
-          <div class="col-md-2 mb-4  ms-5">
-            <h4 class="mb-3" style="color:#d63384;">Quick Links</h4>
-            <div class="row">
-              <div class="col-6">
-                <ul class="footer-links list-unstyled">
-                  <li><a href="index.html">Home</a></li>
-                  <li><a href="about.html">About Us</a></li>
-                  <li><a href="services.html">Services</a></li>
-                  <li><a href="event_detail.html">Events</a></li>
-                  <li><a href="photos.html">Gallery</a></li>
-                  <li><a href="registration.html">Register</a></li>
-                  <li><a href="contact.html">Contact</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-
-          <!-- Contact Information -->
-          <div class="col-md-4 text-start mb-4">
-            <h4 class="mb-3" style="color:#d63384;">Contact Us</h4>
-            <p>
-              <i class="bi bi-geo-alt-fill me-2" style="color:red; font-size:1.3rem;"></i>
-              123 Celebration Avenue, Mumbai, India
-            </p>
-            <p>
-              <i class="bi bi-telephone-fill me-2" style="color:green; font-size:1.3rem;"></i>
-              +91 9876543210
-            </p>
-            <p>
-              <i class="bi bi-envelope-fill me-2" style="font-size:1.3rem; color:#d63384;"></i>
-              info@everafterplanners.com
-            </p>
-
-            <!-- Social Media Icons BELOW Email -->
-            <div class="d-flex gap-3 mt-3">
-              <a href="https://www.instagram.com/" target="_blank" style="color:#E1306C;" class="fs-4">
-                <i class="bi bi-instagram"></i>
-              </a>
-              <a href="https://www.facebook.com/" target="_blank" style="color:#1877F2;" class="fs-4">
-                <i class="bi bi-facebook"></i>
-              </a>
-              <a href="https://twitter.com/" target="_blank" style="color:#1DA1F2;" class="fs-4">
-                <i class="bi bi-twitter"></i>
-              </a>
-            </div>
-          </div>
-
+          <p style="font-size: 0.95rem; line-height: 1.6;">
+            We create unforgettable memories by planning and managing stunning weddings, birthdays,
+            corporate events, and more. Our passion is turning your dream event into reality
+            with precision, creativity, and love.
+          </p>
+          <p style="font-size: 0.9rem; color: #ccc;">
+            Let us handle the details while you enjoy your special moments!
+          </p>
         </div>
 
-        <hr style="border-color: #444;">
-        <div class="text-center">
-          <p class="mb-0" style="font-size: 0.9rem;">
-            © 2025 <span style="color:#d63384; font-weight: bold;">EverAfter Planners</span> |
-            Designed with <i class="bi bi-heart-fill" style="color:#d63384;"></i> for your special moments
+        <!-- Quick Links -->
+        <div class="col-md-2 mb-4 ms-5">
+          <h4 class="mb-3">Quick Links</h4>
+          <ul class="footer-links list-unstyled">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="event_detail.html">Events</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="registration.html">Register</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="col-md-4 text-start mb-4">
+          <h4 class="mb-3">Contact Us</h4>
+          <p>
+            <i class="bi bi-geo-alt-fill me-2"></i>
+            123 Celebration Street, Mumbai, India
+          </p>
+          <p>
+            <i class="bi bi-telephone-fill me-2"></i>
+            +91 9876543210
+          </p>
+          <p>
+            <i class="bi bi-envelope-fill me-2"></i>
+            info@everafterplanners.com
           </p>
         </div>
       </div>
-    </section>
+
+      <div class="text-center py-3 border-top border-secondary">
+        <p class="mb-0">&copy; 2025 EverAfter Planners. All Rights Reserved.</p>
+      </div>
+    </div>
   </footer>
 
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous">
-    </script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
