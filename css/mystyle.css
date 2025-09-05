@@ -1,6 +1,30 @@
 .t-text{
     text-shadow: 4px 4px 2px gray;
 }
+/* Navbar */
+    .navbar-nav .nav-link {
+      position: relative;
+      transition: color 0.3s;
+    }
+
+    .navbar-nav .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background-color: #d63384;
+      left: 0;
+      bottom: -5px;
+      transition: width 0.3s;
+    }
+
+    .navbar-nav .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #d63384;
+    }
  .card{
       border-radius:12px;
       box-shadow: 0px 6px 5px black;
@@ -25,6 +49,9 @@
         background-color: black;
         color: #fff;
       }
+
+      
+
 /* Footer */
     footer {
       background: white;
@@ -74,3 +101,4 @@
   color: #d63384; /* Text color on hover */
   transform: translateX(3px); /* Small slide effect */
 }
+
