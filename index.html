@@ -27,6 +27,56 @@
     .navbar-nav .nav-link:hover {
       color: #d63384;
     }
+
+    /* Footer */
+    footer {
+      background: white;
+      color: white;
+    }
+
+    footer a {
+      color: white;
+      transition: color 0.3s;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: #d63384;
+    }
+    /* Quick Links Styling */
+.footer-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  display: inline-block;
+  position: relative;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover Effect - Underline Slide */
+.footer-links li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  display: block;
+  margin-top: 5px;
+  right: 0;
+  background: #d63384; /* Accent color */
+  transition: width 0.3s ease;
+  -webkit-transition: width 0.3s ease;
+}
+
+.footer-links li a:hover::after {
+  width: 100%;
+  left: 0;
+  background: #d63384;
+}
+
+.footer-links li a:hover {
+  color: #d63384; /* Text color on hover */
+  transform: translateX(3px); /* Small slide effect */
+}
   </style>
 </head>
 <body>
