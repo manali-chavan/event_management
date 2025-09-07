@@ -34,15 +34,6 @@
     .carousel-item {
       position: relative;
     }
-    .carousel-item::after {
-      content: ''; /* FIXED missing content */
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.35);
-    }
     .carousel-item img {
       height: 500px;
       object-fit: cover;
@@ -79,6 +70,7 @@
     /* Cards */
     .card {
       border: none;
+      height: 500px;
       border-radius: 15px;
       overflow: hidden;
       transition: transform 0.4s ease-in-out, box-shadow 0.4s;
@@ -88,8 +80,31 @@
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     }
     .card img {
-      height: 230px;
+      height: 300px;
       object-fit: cover;
+      width: 100%;
+    }
+    .card-body h6 {
+      font-weight: bold;
+      color: #d63384;
+    }
+    .card-body p {
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    /* Tabs */
+    .nav-pills .nav-link {
+      border-radius: 25px;
+      padding: 10px 20px;
+      margin: 5px;
+      font-weight: 500;
+      color: #e91e63;
+      border: 1px solid #e91e63;
+    }
+    .nav-pills .nav-link.active {
+      background-color: #e91e63;
+      color: #fff;
     }
 
     /* Footer */
@@ -110,8 +125,6 @@
       color: #d63384;
       margin-bottom: 1rem;
     }
-
-    /* Footer Quick Links */
     .footer-links li a {
       color: white;
       text-decoration: none;
@@ -154,7 +167,6 @@
       }
     }
   </style>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 </head>
 <body>
 
@@ -200,22 +212,21 @@
           <div class="carousel-item active">
             <img src="images/event4.jpg" class="d-block w-100" alt="Dream Wedding Event">
             <div class="carousel-caption d-none d-md-block text-center">
-              <h3>Dream Weddings</h3>
+              <h1>Dream Weddings</h1>
               <p>Making your day unforgettable</p>
             </div>
           </div>
           <div class="carousel-item">
             <img src="images/b-day6.avif" class="d-block w-100" alt="Birthday Party">
             <div class="carousel-caption d-none d-md-block text-center">
-              <h3>Birthday Parties</h3>
-              <hr class="mx-auto" style="width:80px; height:4px; background-color: #d63384; border:none; border-radius:4px;">
+              <h1>Birthday Parties</h1>
               <p>Celebrate your special day</p>
             </div>
           </div>
           <div class="carousel-item">
             <img src="images/c3.jpg" class="d-block w-100" alt="Corporate Event">
             <div class="carousel-caption d-none d-md-block text-center">
-              <h3>Corporate Events</h3>
+              <h1>Corporate Events</h1>
               <p>We manage professional corporate events with perfection</p>
             </div>
           </div>
@@ -232,27 +243,36 @@
     </section>
   </main>
 
-  <!-- Upcoming Events -->
-  <section>
-    <h2>Upcoming Events</h2>
-    <div class="section"></div>
-    
-    <div class="container mt-4">
-      <!-- Wedding Events -->
-      <h4 class="ms-3 mb-3 text-uppercase fw-bold"><i>Wedding</i></h4>
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="card shadow">
-            <img src="images/wedding3.webp" alt="Wedding in SambhajiNagar">
-            <div class="card-body">
-              <h6 class="card-title">&#128197; 22nd November 2025 | &#128205; SambhajiNagar</h6>
-              <p class="card-text">Turning your dream wedding into a beautiful reality</p>
-              <a href="registration.html" class="btn btn-outline-dark">Register Now</a>
+  <!-- Tabs (Upcoming / Past) -->
+  <div class="container py-5">
+    <ul class="nav nav-pills justify-content-center mb-4" id="eventTabs" role="tablist">
+      <li class="nav-item">
+        <button class="nav-link active" id="upcoming-tab" data-bs-toggle="pill" data-bs-target="#upcoming" type="button">Upcoming Events</button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link" id="past-tab" data-bs-toggle="pill" data-bs-target="#past" type="button">Past Events</button>
+      </li>
+    </ul>
+
+    <div class="tab-content">
+      <!-- Upcoming Events -->
+      <div class="tab-pane fade show active" id="upcoming">
+        <h2>Upcoming Events</h2>
+        <div class="section"></div>
+
+        <!-- Example Events -->
+        <div class="row g-4 mt-4">
+          <div class="col-md-4">
+            <div class="card shadow">
+              <img src="images/wedding3.webp" alt="Wedding in SambhajiNagar">
+              <div class="card-body">
+                <h6 class="card-title">📅 22nd November 2025 | 📍 SambhajiNagar</h6>
+                <p>Turning your dream wedding into a beautiful reality</p>
+                <a href="registration.html" class="btn btn-outline-dark">Register Now</a>
+              </div>
             </div>
           </div>
-        </div>
-
-        <div class="col-md-4">
+          <div class="col-md-4">
           <div class="card shadow">
             <img src="images/event details3.jpg" alt="Wedding in Jalgaon">
             <div class="card-body">
@@ -262,8 +282,7 @@
             </div>
           </div>
         </div>
-
-        <div class="col-md-4">
+<div class="col-md-4">
           <div class="card shadow">
             <img src="images/wedding5.avif" alt="Wedding in Delhi">
             <div class="card-body">
@@ -273,11 +292,7 @@
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Birthday Events -->
+ <!-- Birthday Events -->
   <section class="mt-5">
     <div class="container">
       <h4 class="ms-3 mb-3 text-uppercase fw-bold"><i>Birthday</i></h4>
@@ -292,8 +307,7 @@
             </div>
           </div>
         </div>
-
-        <div class="col-md-4">
+               <div class="col-md-4">
           <div class="card shadow">
             <img src="images/b_card3.jpg" alt="Birthday in Rahata">
             <div class="card-body">
@@ -303,7 +317,6 @@
             </div>
           </div>
         </div>
-
         <div class="col-md-4">
           <div class="card shadow">
             <img src="images/b_card4.jpg" alt="Birthday in Nashik">
@@ -314,11 +327,8 @@
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Corporate Events -->
+      </section>
+      <!-- Corporate Events -->
   <section class="mt-5">
     <div class="container">
       <h4 class="ms-3 mb-3 text-uppercase fw-bold"><i>Corporate</i></h4>
@@ -355,132 +365,104 @@
             </div>
           </div>
         </div>
+      </section>
+          <!-- More upcoming events... -->
+        </div>
       </div>
-    </div>
-  </section>
 
-  <!-- Past Events -->
-  <section class="mt-5">
-    <div class="container">
-      <h2>Past Events</h2>
-      <div class="section"></div>
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="card shadow">
-            <img src="images/event4.jpg" alt="Past Wedding in Goa">
-            <div class="card-body">
-              <h6 class="card-title">Wedding</h6>
-              <p class="card-text">Held on 22nd March 2024 in Goa</p>
-              <p>Experience a fairy-tale wedding with royal décor, live music, and unforgettable memories.</p>
+      <!-- Past Events -->
+      <div class="tab-pane fade" id="past">
+        <h2 class="mt-4">🎉 Past Events</h2>
+        <div class="section"></div>
+        <div class="row g-4 mt-4">
+          <div class="col-md-4">
+            <div class="card shadow">
+              <img src="images/event3.webp" alt="Corporate Meetup in Mumbai">
+              <div class="card-body">
+                <h6 class="card-title">Corporate Meetup</h6>
+               <p class="card-text">Held on 15th Jan 2024 in Goa</p>
+                <p>Where professionals meet innovation and strategy.</p>
+                <a href="gallery.html" class="btn btn-outline-dark">View Gallery</a>
+              </div>
             </div>
           </div>
-        </div>
-
-        <div class="col-md-4">
+           <div class="col-md-4">
           <div class="card shadow">
             <img src="images/b_card.jpg" alt="Past Birthday in Goa">
             <div class="card-body">
               <h6 class="card-title">Birthday</h6>
               <p class="card-text">Held on 2nd June 2024 in Goa</p>
-              <p>A fun-filled birthday party with customized themes and entertainment.</p>
+              <!-- <p>A fun-filled birthday party with customized themes and entertainment.</p> -->
+               <a href="gallery.html" class="btn btn-outline-dark">View Gallery</a>
             </div>
           </div>
         </div>
-
-        <div class="col-md-4">
+             <div class="col-md-4">
           <div class="card shadow">
             <img src="images/c_card1.webp" alt="Past Corporate Event in Goa">
             <div class="card-body">
               <h6 class="card-title">Corporate</h6>
               <p class="card-text">Held on 1st May 2024 in Goa</p>
               <p>Flawless execution of corporate meetings and events with perfect arrangements.</p>
+               <a href="gallery.html" class="btn btn-outline-dark">View Gallery</a>
             </div>
           </div>
         </div>
+
+          <!-- More past events... -->
+        </div>
       </div>
     </div>
-  </section>
+  </div>
 
   <!-- Footer -->
-<footer class="text-white pt-5" style="background-color: #000;">
+  <footer class="text-white pt-5">
     <section>
       <div class="container">
         <div class="row">
-
-          <!-- Logo & About Section -->
+          <!-- Logo & About -->
           <div class="col-md-4 text-start mb-4">
             <div class="d-flex align-items-center mb-3">
               <img src="images/logo1.png" alt="EverAfter Planners Logo" width="80" height="60"
                 class="me-3 rounded-circle border border-light">
               <h3 class="mb-0" style="color:#d63384; font-weight: bold;">EverAfter Planners</h3>
             </div>
-            <p style="font-size: 0.95rem; line-height: 1.6;">
-              We create unforgettable memories by planning and managing stunning weddings, birthdays,
-              corporate events, and more. Our passion is turning your dream event into reality
-              with precision, creativity, and love.
-            </p>
-            <p style="font-size: 0.9rem; color: #ccc;">
-              Let us handle the details while you enjoy your special moments!
-            </p>
+            <p>We create unforgettable memories by planning and managing stunning weddings, birthdays,
+              corporate events, and more.</p>
           </div>
 
           <!-- Quick Links -->
-          <div class="col-md-2 mb-4  ms-5">
-            <h4 class="mb-3" style="color:#d63384;">Quick Links</h4>
-            <div class="row">
-              <div class="col-6">
-                <ul class="footer-links list-unstyled">
-                  <li><a href="index.html">Home</a></li>
-                  <li><a href="about.html">About Us</a></li>
-                  <li><a href="services.html">Services</a></li>
-                  <li><a href="event_detail.html">Events</a></li>
-                  <li><a href="photos.html">Gallery</a></li>
-                  <li><a href="registration.html">Register</a></li>
-                  <li><a href="contact.html">Contact</a></li>
-                </ul>
-              </div>
-            </div>
+          <div class="col-md-2 mb-4 ms-5">
+            <h4 style="color:#d63384;">Quick Links</h4>
+            <ul class="footer-links list-unstyled">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="event_detail.html">Events</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="registration.html">Register</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
           </div>
 
-
-          <!-- Contact Information -->
+          <!-- Contact -->
           <div class="col-md-4 text-start mb-4">
-            <h4 class="mb-3" style="color:#d63384;">Contact Us</h4>
-            <p>
-              <i class="bi bi-geo-alt-fill me-2" style="color:red; font-size:1.3rem;"></i>
-              123 Celebration Avenue, Mumbai, India
-            </p>
-            <p>
-              <i class="bi bi-telephone-fill me-2" style="color:green; font-size:1.3rem;"></i>
-              +91 9876543210
-            </p>
-            <p>
-              <i class="bi bi-envelope-fill me-2" style="font-size:1.3rem; color:#d63384;"></i>
-              info@everafterplanners.com
-            </p>
-
-            <!-- Social Media Icons BELOW Email -->
+            <h4 style="color:#d63384;">Contact Us</h4>
+            <p><i class="bi bi-geo-alt-fill me-2" style="color:red;"></i> 123 Celebration Avenue, Mumbai, India</p>
+            <p><i class="bi bi-telephone-fill me-2" style="color:green;"></i> +91 9876543210</p>
+            <p><i class="bi bi-envelope-fill me-2" style="color:#d63384;"></i> info@everafterplanners.com</p>
             <div class="d-flex gap-3 mt-3">
-              <a href="https://www.instagram.com/" target="_blank" style="color:#E1306C;" class="fs-4">
-                <i class="bi bi-instagram"></i>
-              </a>
-              <a href="https://www.facebook.com/" target="_blank" style="color:#1877F2;" class="fs-4">
-                <i class="bi bi-facebook"></i>
-              </a>
-              <a href="https://twitter.com/" target="_blank" style="color:#1DA1F2;" class="fs-4">
-                <i class="bi bi-twitter"></i>
-              </a>
+              <a href="https://www.instagram.com/" target="_blank" style="color:#E1306C;" class="fs-4"><i class="bi bi-instagram"></i></a>
+              <a href="https://www.facebook.com/" target="_blank" style="color:#1877F2;" class="fs-4"><i class="bi bi-facebook"></i></a>
+              <a href="https://twitter.com/" target="_blank" style="color:#1DA1F2;" class="fs-4"><i class="bi bi-twitter"></i></a>
             </div>
           </div>
-
         </div>
 
         <hr style="border-color: #444;">
         <div class="text-center">
-          <p class="mb-0" style="font-size: 0.9rem;">
-            © 2025 <span style="color:#d63384; font-weight: bold;">EverAfter Planners</span> |
-            Designed with <i class="bi bi-heart-fill" style="color:#d63384;"></i> for your special moments
-          </p>
+          <p>&copy; 2025 <span style="color:#d63384; font-weight: bold;">EverAfter Planners</span> |
+            Designed with <i class="bi bi-heart-fill" style="color:#d63384;"></i></p>
         </div>
       </div>
     </section>
