@@ -11,7 +11,11 @@
     <link rel="stylesheet" href="css/mystyle.css">
   <style>
     body {
-      background-color: #d63384;
+      background: url('images/backg-regis.jpg') no-repeat center center/cover;
+      background-attachment: fixed;
+      position: relative;
+      min-height: 100vh;
+
     }
     .form-section {
       padding: 150px 20px;
@@ -43,7 +47,21 @@
       padding: 10px 30px;
       transition: 0.3s;
     }
+    /* Scrollable Form if Content Overflows */
+    .scrollable-form {
+      max-height: 65vh;
+      overflow-y: auto;
+      padding-right: 10px;
+    }
 
+    .scrollable-form::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    .scrollable-form::-webkit-scrollbar-thumb {
+      background: #d63384;
+      border-radius: 8px;
+    }
     .btn-submit:hover {
       background-color: black;
       color: #fff;
@@ -89,118 +107,112 @@
   </nav>
 
   </header>
-  <!--header end-->
-  <div class="form-section p-30">
-    <div class="form-box p-10">
-      <div class="h1">Event Registration</div>
-      <form>
-        <!-- Personal Info -->
-        <h4 class="mb-3 fw-bold text-pink">Personal Information</h4>
-        <div class="row">
-          <div class="col-md-6 mb-3">
-            <label class="form-label">Full Name</label>
-            <input type="text" class="form-control" placeholder="Enter your full name" required>
-          </div>
-          <div class="col-md-6 mb-3">
-            <label class="form-label">Email</label>
-            <input type="text" class="form-control" placeholder="Enter your email" required>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-6 mb-3">
-            <label class="form-label">Phone Number</label>
-            <input type="text" class="form-control" placeholder="Enter Phone number" required>
-          </div>
-          <div class="col-md-6 mb-3">
-            <label class="form-label">City</label>
-            <input type="text" class="form-control" placeholder="Enter your city" required>
-          </div>
-        </div>
-        <div class="row">
-
-          <div class="col-md-12">
-            <label class="form-label">Gender</label><br>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-              <label class="form-check-label" for="inlineRadio1">Male</label>
+  <!--header end-->  
+  <section class="form-section">
+    <div class="form-box">
+      <h2>Event Registration</h2>
+      <div class="scrollable-form">
+        <form>
+          <!-- Personal Info -->
+          <h4 class="mb-3 fw-bold text-pink">Personal Information</h4>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label>Full Name</label>
+              <input type="text" class="form-control" placeholder="Enter your full name" required>
             </div>
+            <div class="col-md-6 mb-3">
+              <label>Email</label>
+              <input type="email" class="form-control" placeholder="Enter your email" required>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label>Phone Number</label>
+              <input type="tel" class="form-control" placeholder="Enter phone number" required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label>City</label>
+              <input type="text" class="form-control" placeholder="Enter your city" required>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label>Gender</label><br>
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-              <label class="form-check-label" for="inlineRadio2">Female</label>
+              <input class="form-check-input" type="radio" name="gender" value="Male" required>
+              <label class="form-check-label">Male</label>
             </div>
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-              <label class="form-check-label" for="inlineRadio2">Other</label>
+              <input class="form-check-input" type="radio" name="gender" value="Female">
+              <label class="form-check-label">Female</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="gender" value="Other">
+              <label class="form-check-label">Other</label>
             </div>
           </div>
-        </div>
 
-        <!-- event detail -->
-        <h4 class="mb-3 fw-bold text-pink">Event Details</h4>
-        <div class="row">
-          <div class="col-md-6 mb-3">
-            <label class="form-label">Event Type</label>
-            <select class="form-select" aria-label="Default select example">
-              <option selected>Choose...</option>
-              <option>Wedding</option>
-              <option>Birthday</option>
-              <option>Corporate</option>
-              <option>Engagement</option>
-              <option>Other</option>
-            </select>
+          <!-- Event Details -->
+          <h4 class="mb-3 fw-bold text-pink">Event Details</h4>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label>Event Type</label>
+              <select class="form-select" required>
+                <option selected disabled>Choose...</option>
+                <option>Wedding</option>
+                <option>Birthday</option>
+                <option>Corporate</option>
+                <option>Engagement</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label>Event Date</label>
+              <input type="date" class="form-control" required>
+            </div>
           </div>
-          <div class="col-md-6 mb-3">
-            <label class="form-label">Event Date</label>
-            <input type="date" class="form-control" required>
-          </div>
-        </div>
 
-        <div class="row">
-          <div class="col-md-6 mb-3">
-            <label class="form-label">Number of Guests</label>
-            <input type="number" class="form-control" placeholder="e.g. 200">
-          </div>
-          <div class="col-md-6 mb-3">
-            <label class="form-label">Venue Preference</label>
-            <input type="text" class="form-control" placeholder="Indoor / Outdoor / Hotel">
-          </div>
           <div class="row">
-            <div class="col-md-12 mb-3">
-              <label class="form-label">Estimated Budget</label>
-              <input type="text" class="form-control" placeholder="e.g. ₹5,00,000">
+            <div class="col-md-6 mb-3">
+              <label>Number of Guests</label>
+              <input type="number" class="form-control" placeholder="e.g. 200">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label>Venue Preference</label>
+              <input type="text" class="form-control" placeholder="Indoor / Outdoor / Hotel">
             </div>
           </div>
-          <div class="row">
-            <div class="col-md-12 mb-3">
-              <label class="form-label">Special Requests</label>
-              <textarea class="form-control" rows="3" placeholder="Enter any additional details"></textarea>
-            </div>
+
+          <div class="mb-3">
+            <label>Estimated Budget</label>
+            <input type="text" class="form-control" placeholder="e.g. ₹5,00,000">
           </div>
-          <div class="row">
-            <div class="col-md-12 mb-3">
-              <label class="form-label">Upload Reference File (Optional)</label>
-              <input type="file" class="form-control">
-            </div>
+
+          <div class="mb-3">
+            <label>Special Requests</label>
+            <textarea class="form-control" rows="3" placeholder="Enter any additional details"></textarea>
           </div>
-          <div class="row">
-            <div class="col-md-12">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                <label class="form-check-label" for="defaultCheck1">
-                  I agree to the terms & conditions
-                </label>
-              </div>
-            </div>
+
+          <div class="mb-3">
+            <label>Upload Reference File (Optional)</label>
+            <input type="file" class="form-control">
           </div>
+
+          <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" id="terms" required>
+            <label class="form-check-label" for="terms">I agree to the terms & conditions</label>
+          </div>
+
           <!-- Submit -->
           <div class="text-center">
             <button type="submit" class="btn btn-submit">Submit Registration</button>
           </div>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
-  </div>
+  </section>
+
 
   <!-- Footer -->
   <footer class="text-white pt-5" style="background-color: #000;">
@@ -226,7 +238,7 @@
           </div>
 
           <!-- Quick Links -->
-          <div class="col-md-2 mb-4  ms-5">
+          <div class="col-md-3 mb-4  ms-5">
             <h4 class="mb-3" style="color:#d63384;">Quick Links</h4>
             <div class="row">
               <div class="col-6">
