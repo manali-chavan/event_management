@@ -4,19 +4,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Event</title>
+  <title>Event Registration</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/mystyle.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/mystyle.css">
   <style>
+    /* Background Image */
     body {
-      background: url('images/backg-regis.jpg') no-repeat center center/cover;
       background-attachment: fixed;
       position: relative;
       min-height: 100vh;
-
     }
+
+    /* Form Section */
     .form-section {
       padding: 150px 20px;
     }
@@ -32,12 +32,31 @@
 
     .form-box h2 {
       font-family: 'Playfair Display', serif;
-      font-size: 3rem;
+      font-size: 2.5rem;
       font-weight: bold;
       text-align: center;
       color: #d63384;
+      margin-bottom: 30px;
     }
 
+    /* Scrollable form content */
+    .scrollable-form {
+      max-height: 65vh;
+      overflow-y: auto;
+      padding-right: 10px;
+    }
+
+    /* Custom Scrollbar */
+    .scrollable-form::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .scrollable-form::-webkit-scrollbar-thumb {
+      background: #d63384;
+      border-radius: 8px;
+    }
+
+    /* Submit Button */
     .btn-submit {
       background-color: white;
       color: black;
@@ -47,38 +66,32 @@
       padding: 10px 30px;
       transition: 0.3s;
     }
-    /* Scrollable Form if Content Overflows */
-    .scrollable-form {
-      max-height: 65vh;
-      overflow-y: auto;
-      padding-right: 10px;
-    }
 
-    .scrollable-form::-webkit-scrollbar {
-      width: 4px;
-    }
-
-    .scrollable-form::-webkit-scrollbar-thumb {
-      background: #d63384;
-      border-radius: 8px;
-    }
     .btn-submit:hover {
       background-color: black;
       color: #fff;
     }
 
-    .h1 {
-      text-align: center;
-      color: #d63384;
+    /* Error messages */
+    .text-danger {
+      font-size: 0.85rem;
     }
 
-    .content {
-      color: black;
+    /* Footer */
+    footer {
+      background-color: #000;
+      color: #fff;
+      padding-top: 40px;
+      margin-top: 50px;
+    }
+
+    footer a {
       text-decoration: none;
+      color: #ccc;
     }
 
-    .content:hover {
-      color: azure;
+    footer a:hover {
+      color: #d63384;
     }
   </style>
 </head>
@@ -95,70 +108,81 @@
       <div class="collapse navbar-collapse" id="navMenu">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link " href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
           <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-          <li class="nav-item"><a class=" nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
           <li class="nav-item"><a class="nav-link" href="event_detail.html">Events</a></li>
-          <li class="nav-item"><a class="nav-link active fw-bold text-pink" href="registration.html">Register</a></li>
+          <li class="nav-item"><a class="nav-link active fw-bold text-pink" style="color:#d63384" href="registration.html">Register</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  </header>
-  <!--header end-->  
+  <!-- Registration Form Section -->
   <section class="form-section">
     <div class="form-box">
       <h2>Event Registration</h2>
+
+      <!-- Success Alert -->
+      <div id="successAlert" class="alert alert-success d-none text-center" role="alert">
+        🎉 Your form has been submitted successfully!
+      </div>
+
       <div class="scrollable-form">
-        <form>
-          <!-- Personal Info -->
+        <form id="contactForm" onsubmit="return validate(event)">
+          <!-- Personal Information -->
           <h4 class="mb-3 fw-bold text-pink">Personal Information</h4>
           <div class="row">
             <div class="col-md-6 mb-3">
-              <label>Full Name</label>
-              <input type="text" class="form-control" placeholder="Enter your full name" required>
+              <label for="name" class="form-label">Full Name</label>
+              <input type="text" class="form-control" id="name" placeholder="Your name">
+              <span class="text-danger" id="nameError"></span>
             </div>
             <div class="col-md-6 mb-3">
-              <label>Email</label>
-              <input type="email" class="form-control" placeholder="Enter your email" required>
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" placeholder="Your email">
+              <span class="text-danger" id="emailError"></span>
             </div>
           </div>
 
           <div class="row">
             <div class="col-md-6 mb-3">
-              <label>Phone Number</label>
-              <input type="tel" class="form-control" placeholder="Enter phone number" required>
+              <label for="mobile" class="form-label">Mobile Number</label>
+              <input type="tel" class="form-control" id="mobile" placeholder="Your mobile number">
+              <span class="text-danger" id="mobileError"></span>
             </div>
             <div class="col-md-6 mb-3">
-              <label>City</label>
-              <input type="text" class="form-control" placeholder="Enter your city" required>
+              <label for="city" class="form-label">City</label>
+              <input type="text" class="form-control" id="city" placeholder="Enter your city">
+              <span class="text-danger" id="cityError"></span>
             </div>
           </div>
 
           <div class="mb-3">
-            <label>Gender</label><br>
+            <label class="form-label">Gender:</label><br>
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="gender" value="Male" required>
-              <label class="form-check-label">Male</label>
+              <input class="form-check-input" type="radio" name="gender" id="male" value="male">
+              <label class="form-check-label" for="male">Male</label>
             </div>
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="gender" value="Female">
-              <label class="form-check-label">Female</label>
+              <input class="form-check-input" type="radio" name="gender" id="female" value="female">
+              <label class="form-check-label" for="female">Female</label>
             </div>
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="gender" value="Other">
-              <label class="form-check-label">Other</label>
+              <input class="form-check-input" type="radio" name="gender" id="other" value="other">
+              <label class="form-check-label" for="other">Other</label>
             </div>
+            <br>
+            <span class="text-danger" id="genderError"></span>
           </div>
 
           <!-- Event Details -->
           <h4 class="mb-3 fw-bold text-pink">Event Details</h4>
           <div class="row">
             <div class="col-md-6 mb-3">
-              <label>Event Type</label>
-              <select class="form-select" required>
+              <label for="type" class="form-label">Event Type</label>
+              <select class="form-select" id="type">
                 <option selected disabled>Choose...</option>
                 <option>Wedding</option>
                 <option>Birthday</option>
@@ -166,53 +190,60 @@
                 <option>Engagement</option>
                 <option>Other</option>
               </select>
+              <span class="text-danger" id="typeError"></span>
             </div>
             <div class="col-md-6 mb-3">
-              <label>Event Date</label>
-              <input type="date" class="form-control" required>
+              <label for="date" class="form-label">Event Date</label>
+              <input type="date" class="form-control" id="date">
+              <span class="text-danger" id="dateError"></span>
             </div>
           </div>
 
           <div class="row">
             <div class="col-md-6 mb-3">
-              <label>Number of Guests</label>
-              <input type="number" class="form-control" placeholder="e.g. 200">
+              <label for="number" class="form-label">Number of Guests</label>
+              <input type="number" class="form-control" id="number" placeholder="e.g. 200">
+              <span class="text-danger" id="numberError"></span>
             </div>
             <div class="col-md-6 mb-3">
-              <label>Venue Preference</label>
-              <input type="text" class="form-control" placeholder="Indoor / Outdoor / Hotel">
+              <label for="venue" class="form-label">Venue Preference</label>
+              <input type="text" class="form-control" id="venue" placeholder="Indoor / Outdoor / Hotel">
+              <span class="text-danger" id="venueError"></span>
             </div>
           </div>
 
           <div class="mb-3">
-            <label>Estimated Budget</label>
-            <input type="text" class="form-control" placeholder="e.g. ₹5,00,000">
+            <label for="number1" class="form-label">Estimated Budget</label>
+            <input type="number" class="form-control" id="number1" placeholder="e.g. ₹5,00,000">
+            <span class="text-danger" id="number1Error"></span>
           </div>
 
           <div class="mb-3">
-            <label>Special Requests</label>
-            <textarea class="form-control" rows="3" placeholder="Enter any additional details"></textarea>
+            <label for="text" class="form-label">Special Requests</label>
+            <textarea class="form-control" id="text" rows="3" placeholder="Enter any additional details"></textarea>
+            <span class="text-danger" id="textError"></span>
           </div>
 
           <div class="mb-3">
-            <label>Upload Reference File (Optional)</label>
-            <input type="file" class="form-control">
+            <label for="upload" class="form-label">Upload Reference File (Optional)</label>
+            <input type="file" class="form-control" id="upload">
           </div>
 
           <div class="form-check mb-3">
-            <input class="form-check-input" type="checkbox" id="terms" required>
-            <label class="form-check-label" for="terms">I agree to the terms & conditions</label>
+            <input type="checkbox" class="form-check-input" id="checkbox">
+            <label class="form-check-label" for="checkbox">I agree to the terms & conditions</label>
+            <br>
+            <span class="text-danger" id="checkboxError"></span>
           </div>
 
-          <!-- Submit -->
-          <div class="text-center">
+          <!-- Submit Button -->
+          <div class="text-center mb-5">
             <button type="submit" class="btn btn-submit">Submit Registration</button>
           </div>
         </form>
       </div>
     </div>
   </section>
-
 
   <!-- Footer -->
   <footer class="text-white pt-5" style="background-color: #000;">
@@ -273,17 +304,18 @@
             </p>
 
             <!-- Social Media Icons BELOW Email -->
-<div class="footer_socials d-flex gap-3 mt-3">
-  <a href="https://www.instagram.com/" target="_blank" style="color:#E1306C;" class="fs-4">
-    <i class="bi bi-instagram"></i>
-  </a>
-  <a href="https://www.facebook.com/" target="_blank" style="color:#1877F2;" class="fs-4">
-    <i class="bi bi-facebook"></i>
-  </a>
-  <a href="https://twitter.com/" target="_blank" style="color:#1DA1F2;" class="fs-4">
-    <i class="bi bi-twitter"></i>
-  </a>
-</div>
+            <div class="footer_socials d-flex gap-3 mt-3">
+              <a href="https://www.instagram.com/" target="_blank" style="color:#E1306C;" class="fs-4">
+                <i class="bi bi-instagram"></i>
+              </a>
+              <a href="https://www.facebook.com/" target="_blank" style="color:#1877F2;" class="fs-4">
+                <i class="bi bi-facebook"></i>
+              </a>
+              <a href="https://twitter.com/" target="_blank" style="color:#1DA1F2;" class="fs-4">
+                <i class="bi bi-twitter"></i>
+              </a>
+            </div>
+
           </div>
 
         </div>
@@ -300,9 +332,124 @@
   </footer>
 
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous">
-    </script>
-</body>
+  <!-- Validation Script -->
+  <script>
+    function validate(event) {
+      event.preventDefault(); // Prevent form from submitting automatically
 
+      // Get values
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const mobile = document.getElementById("mobile").value.trim();
+      const city = document.getElementById("city").value.trim();
+      const type = document.getElementById("type").value.trim();
+      const date = document.getElementById("date").value.trim();
+      const number = document.getElementById("number").value.trim();
+      const venue = document.getElementById("venue").value.trim();
+      const number1 = document.getElementById("number1").value.trim();
+      const text = document.getElementById("text").value.trim();
+      const checkbox = document.getElementById("checkbox");
+      const gender = document.querySelector('input[name="gender"]:checked');
+
+      // Error spans
+      const fields = ["name", "email", "mobile", "city", "type", "date", "number", "venue", "number1", "text", "gender", "checkbox"];
+      fields.forEach(field => document.getElementById(field + "Error").textContent = "");
+
+      let isValid = true;
+
+      // Name
+      if (name === "") {
+        document.getElementById("nameError").textContent = "Please enter your name.";
+        isValid = false;
+      } else if (name.length < 3) {
+        document.getElementById("nameError").textContent = "Name must be at least 3 characters long.";
+        isValid = false;
+      }
+
+      // Email
+      if (email === "") {
+        document.getElementById("emailError").textContent = "Please enter your email.";
+        isValid = false;
+      } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        document.getElementById("emailError").textContent = "Please enter a valid email address.";
+        isValid = false;
+      }
+
+      // Mobile
+      if (mobile === "") {
+        document.getElementById("mobileError").textContent = "Please enter your mobile number.";
+        isValid = false;
+      } else if (!/^\d{10}$/.test(mobile)) {
+        document.getElementById("mobileError").textContent = "Mobile number must be 10 digits.";
+        isValid = false;
+      }
+
+      // City
+      if (city === "") {
+        document.getElementById("cityError").textContent = "Please enter your city.";
+        isValid = false;
+      }
+
+      // Event Type
+      if (type === "" || type === "Choose...") {
+        document.getElementById("typeError").textContent = "Please select an event type.";
+        isValid = false;
+      }
+
+      // Date
+      if (date === "") {
+        document.getElementById("dateError").textContent = "Please select a date.";
+        isValid = false;
+      }
+
+      // Number of Guests
+      if (number === "") {
+        document.getElementById("numberError").textContent = "Please enter number of guests.";
+        isValid = false;
+      }
+
+      // Venue
+      if (venue === "") {
+        document.getElementById("venueError").textContent = "Please enter a venue preference.";
+        isValid = false;
+      }
+
+      // Budget
+      if (number1 === "") {
+        document.getElementById("number1Error").textContent = "Please enter an estimated budget.";
+        isValid = false;
+      }
+
+      // Special Requests
+      if (text === "") {
+        document.getElementById("textError").textContent = "Please enter special requests.";
+        isValid = false;
+      }
+
+      // Gender
+      if (!gender) {
+        document.getElementById("genderError").textContent = "Please select your gender.";
+        isValid = false;
+      }
+
+      // Checkbox
+      if (!checkbox.checked) {
+        document.getElementById("checkboxError").textContent = "You must agree to the terms.";
+        isValid = false;
+      }
+
+      // If valid, show success alert
+      if (isValid) {
+        document.getElementById("successAlert").classList.remove("d-none");
+        document.getElementById("contactForm").reset();
+        return true;
+      } else {
+        document.getElementById("successAlert").classList.add("d-none");
+        return false;
+      }
+    }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
