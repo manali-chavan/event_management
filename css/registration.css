@@ -142,13 +142,5 @@
   color: #d63384; /* Text color on hover */
   transform: translateX(3px); /* Small slide effect */
 }
-/* Footer Social Icons Hover - Same as Team Socials */
-.footer_socials a {
-  transition: color 0.3s ease, transform 0.3s ease;
-}
 
-.footer_socials a:hover {
-  color: #d63384 !important; /* Matches the hover effect of team_socials */
-  transform: scale(1.2);
-}
 
