@@ -15,6 +15,7 @@
   padding: 10px 25px;
   font-weight: 600;
   transition: all 0.3s ease-in-out;
+ 
 }
 .btn:hover {
   background: #b1246a;
@@ -133,6 +134,111 @@
     .t-text{
       color: #d63384;
     }
+    /* Centered Title */
+/*.title-wrapper {
+  text-align: center; /* Keeps the title centered */
+ /* margin-bottom: 40px;
+  justify-content: center;
+  align-items: center;
+}*/
+
+/* Centered Title */
+.title-wrapper {
+  text-align: center; /* Ensures the title stays in the center horizontally */
+  margin-bottom: 40px;
+}
+
+.title {
+  font-size: 2.5rem;          /* Balanced size */
+  font-weight: 600;            /* Moderate boldness */
+  color: #000;                 /* Black text */
+  text-transform: uppercase;   /* Professional uppercase style */
+  letter-spacing: 1px;
+  margin: 0 auto;
+  padding-bottom: 8px;
+  position: relative;
+  display: block;              /* Block display for perfect centering */
+  text-align: center;          /* Ensures text inside the block is centered */
+}
+
+/* Underline Effect */
+.title::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: #d63384; /* Accent color */
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.title:hover::after {
+  width: 120px;
+}
+
+    /* Hero Section */
+    .hero {
+      position: relative;  
+      height: 65vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      overflow: hidden;
+      margin-top: 0;
+    }
+
+    /* Dark overlay for better text visibility */
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+
+    /* Hero Content */
+    .hero-overlay {
+      position: relative;
+      z-index: 2;
+      padding: 20px;
+    }
+
+    .hero-overlay h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+      letter-spacing: 1px;
+      animation: slideDown 1.2s ease-in-out;
+    }
+
+    .hero-overlay p {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-top: 10px;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+    }
+
+    /* Slide Down Animation */
+    @keyframes slideDown {
+      from {
+        transform: translateY(-30px);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
     
   </style>
 </head>
@@ -165,74 +271,31 @@
   </header>
   <!--header end-->
 
-      <main style="background-color:  #f1f3f5 py-5 mt-5">
-      <!--slider strat-->
-      <section class="py-5 mt-5">
-        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
-  </div>
-
-  <div class="carousel-inner">
-    <div class="carousel-item active" data-bs-interval="2000">
+      <main class="pt-5 mt-5" style="background-color: #f1f3f5;">
      
-      <div class="carousel-caption d-none d-md-block">
-         <h1>We Create Unforgettable Event</h1>
-        <p>Weddings , Parties , Corporate , Concerts</p>
-      </div>
-    </div>
-  <div class="carousel-inner">
-    <div class="carousel-item active" data-bs-interval="2000">
-      <img src="images/event2.avif" height="700" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-         <h1>We Create Unforgettable Event</h1>
-        <p>Weddings , Parties , Corporate , Concerts</p>
-      </div>
-    </div>
-    <div class="carousel-item" data-bs-interval="2000">
-      <img src="images/event1.jpg" height="700" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-         <h1>We Create Unforgettable Event</h1>
-        <p>Weddings , Parties , Corporate , Concerts</p>
-      </div>
-    </div>
-    <div class="carousel-item" data-bs-interval="2000">
-      <img src="images/event4.jpg" height="700" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h1>We Create Unforgettable Event</h1>
-        <p>Weddings , Parties , Corporate , Concerts</p>
-      </div>
-    </div>
+      
+<!-- Hero Section -->
+<section class="hero mb-3 pt-5">
+  <!-- Background Video -->
+  <video autoplay muted loop playsinline class="w-100 h-100 object-fit-cover position-absolute top-0 start-0" style="z-index: 0;">
+    <source src="docs/ba" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
 
-    <div class="carousel-item" data-bs-interval="2000">
-      <img src="images/event3.webp" height="700" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h1>We Create Unforgettable Event</h1>
-        <p>Weddings , Parties , Corporate , Concerts</p>
-      </div>
-    </div>
+  <!-- Overlay Content -->
+  <div class="hero-overlay">
+    <h1>We Create Unforgettable Event</h1>
+    <p>Weddings , Parties , Corporate , Concerts</p>
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-      </section>
-      <!--slider end-->
+</section>
+
 
       <!--About section start-->
       <section class="mt-5">
         <div class=" card container shadow p-3 mb-5 bg-body-tertiary rounded">
             <div class="row">
                 <div class="col-md-12" style="background-color: #f8eaf2;">
-                  <h1 class="d-flex justify-content-center mb-5 t-text">About Us</h1>
+                <h2 class="title text-center mb-4">About Us</h2>
                 <p>We are your trusted partner in event management. Wih years of expertise and creativity, we specialize in making every moment memorable whether it's an elegant wedding, a corporate conference, or a fun-fi-filled party.</p>   
                 </div>
 
@@ -247,7 +310,7 @@
 
 
 <section class="mt-5  shadow p-3 mb-5 bg-body-tertiary rounded">
-    <h1 class="d-flex justify-content-center mb-5 t-text">Our Services</h1>
+   <h2 class="title text-center mb-4">Our Services</h2>
     <div class="container">
         <div class="row">
             <div class="col-md-3">
@@ -354,9 +417,6 @@
    
 </section>
 
-<section class="mt-5">
-
-</section>
  <!-- Footer -->
   <footer class="text-white pt-5" style="background-color: #000;">
     <section>
