@@ -1,0 +1,154 @@
+ /* Background Image */
+    body {
+      background-attachment: fixed;
+      position: relative;
+      min-height: 100vh;
+    }
+    /* Navbar */
+    .navbar-nav .nav-link {
+      position: relative;
+      transition: color 0.3s;
+    }
+
+    .navbar-nav .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background-color: #d63384;
+      left: 0;
+      bottom: -5px;
+      transition: width 0.3s;
+    }
+
+    .navbar-nav .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #d63384;
+    }
+    .form-control {
+  border-radius: 12px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  transition: 0.3s ease;
+}
+.form-control:focus {
+  border-color: #d63384;
+  box-shadow: 0 0 8px rgba(214, 51, 132, 0.3);
+}
+.form-select{
+  border-radius: 12px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  transition: 0.3s ease;
+}
+.form-select:focus {
+  border-color: #d63384;
+  box-shadow: 0 0 8px rgba(214, 51, 132, 0.3);
+}
+    /* Form Section */
+    .form-section {
+      padding: 150px 20px;
+    }
+
+    .form-box {
+      background: #f8eaf2;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .form-box h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: bold;
+      text-align: center;
+      color: #d63384;
+      margin-bottom: 30px;
+    }
+
+    /* Scrollable form content */
+    .scrollable-form {
+      max-height: 65vh;
+      overflow-y: auto;
+      padding-right: 10px;
+    }
+
+    /* Custom Scrollbar */
+    .scrollable-form::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .scrollable-form::-webkit-scrollbar-thumb {
+      background: #d63384;
+      border-radius: 8px;
+    }
+
+    /* Submit Button */
+    .btn-submit {
+      background-color: white;
+      color: black;
+      border-color: black;
+      font-weight: 600;
+      border-radius: 30px;
+      padding: 10px 30px;
+      transition: 0.3s;
+    }
+
+    .btn-submit:hover {
+      background-color: black;
+      color: #fff;
+    }
+
+    /* Error messages */
+    .text-danger {
+      font-size: 0.85rem;
+    }
+     /* Quick Links Styling */
+.footer-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  display: inline-block;
+  position: relative;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover Effect - Underline Slide */
+.footer-links li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  display: block;
+  margin-top: 5px;
+  right: 0;
+  background: #d63384; /* Accent color */
+  transition: width 0.3s ease;
+  -webkit-transition: width 0.3s ease;
+}
+
+.footer-links li a:hover::after {
+  width: 100%;
+  left: 0;
+  background: #d63384;
+}
+
+.footer-links li a:hover {
+  color: #d63384; /* Text color on hover */
+  transform: translateX(3px); /* Small slide effect */
+}
+/* Footer Social Icons Hover - Same as Team Socials */
+.footer_socials a {
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer_socials a:hover {
+  color: #d63384 !important; /* Matches the hover effect of team_socials */
+  transform: scale(1.2);
+}
+
