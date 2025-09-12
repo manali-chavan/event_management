@@ -9,9 +9,12 @@
 
   <style>
     /* Navbar */
+    
     .navbar-nav .nav-link {
       position: relative;
       transition: color 0.3s;
+      
+
     }
     .navbar-nav .nav-link::after {
       content: '';
@@ -45,6 +48,12 @@
       font-size: 30px;
       padding: 15px 20px;
     }
+    .carousel-item img {
+  height: 500px;
+  object-fit: cover;
+  width: 100%;
+}
+
 
     /* Headings */
     h2 {
@@ -160,11 +169,11 @@
       padding: 10px 20px;
       margin: 5px;
       font-weight: 500;
-      color: #e91e63;
-      border: 1px solid #e91e63;
+      color:  #d63384;
+      border: 1px solid  #d63384;
     }
     .nav-pills .nav-link.active {
-      background-color: #e91e63;
+      background-color:  #d63384;
       color: #fff;
     }
 
@@ -232,7 +241,7 @@
 <body>
 
   <!-- Navbar -->
-  <header>
+  <header >
     <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm fixed-top">
       <div class="container">
         <a href="index.html">
@@ -271,8 +280,8 @@
           <!-- Hero Section -->
   <section class="hero mb-3">
     <div class="hero-overlay">
-      <h1>Our services</h1>
-      <p>Designing and executing events that exceed expectations</p>
+      <h1>Our Events</h1>
+      <p>We making every occasion special and unforgettable</p>
     </div>
   </section>
 
@@ -472,12 +481,18 @@
                 class="me-3 rounded-circle border border-light">
               <h3 class="mb-0" style="color:#d63384; font-weight: bold;">EverAfter Planners</h3>
             </div>
-            <p>We create unforgettable memories by planning and managing stunning weddings, birthdays,
-              corporate events, and more.</p>
+           <p style="font-size: 0.95rem; line-height: 1.6;">
+              We create unforgettable memories by planning and managing stunning weddings, birthdays,
+              corporate events, and more. Our passion is turning your dream event into reality
+              with precision, creativity, and love.
+            </p>
+            <p style="font-size: 0.9rem; color: #ccc;">
+              Let us handle the details while you enjoy your special moments!
+            </p>
           </div>
 
           <!-- Quick Links -->
-          <div class="col-md-2 mb-4 ms-5">
+          <div class="col-md-3 mb-4 ms-5">
             <h4 style="color:#d63384;">Quick Links</h4>
             <ul class="footer-links list-unstyled">
               <li><a href="index.html">Home</a></li>
@@ -506,9 +521,10 @@
 
         <hr style="border-color: #444;">
         <div class="text-center">
-          <p>&copy; 2025 <span style="color:#d63384; font-weight: bold;">EverAfter Planners</span> |
-            Designed with <i class="bi bi-heart-fill" style="color:#d63384;"></i></p>
-        </div>
+                    <p class="mb-0" style="font-size: 0.9rem;">
+            © 2025 <span style="color:#d63384; font-weight: bold;">EverAfter Planners</span> |
+            Designed with <i class="bi bi-heart-fill" style="color:#d63384;"></i> for your special moments
+          </p>
       </div>
     </section>
   </footer>
