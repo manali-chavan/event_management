@@ -7,6 +7,13 @@
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
   <style>
+
+    /* Add to your <style> section */
+body {
+  margin: 0;
+  padding: 0;
+}
+
     /*button*/
   .btn{
   background: #d63384;
@@ -43,11 +50,12 @@
       color: #d63384;
     }
 
-    /* Footer */
+    /*Footer*/
     footer {
       background: white;
       color: white;
     }
+
 
     footer a {
       color: white;
@@ -106,8 +114,6 @@
     }
 
     .card:hover {
-      /*transform: translateY(-10px);
-      box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);*/
       border: 2px solid black;
       transform: translateY(-5px);
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
@@ -135,12 +141,12 @@
       color: #d63384;
     }
     /* Centered Title */
-/*.title-wrapper {
+.title-wrapper {
   text-align: center; /* Keeps the title centered */
- /* margin-bottom: 40px;
+  margin-bottom: 40px;
   justify-content: center;
   align-items: center;
-}*/
+}
 
 /* Centered Title */
 .title-wrapper {
@@ -256,7 +262,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navMenu">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link active fw-bold text-pink" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active fw-bold text-pink" style="color:#d63384" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link " href="about.html">About Us</a></li>
           <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
           <li class="nav-item"><a class=" nav-link" href="gallery.html">Gallery</a></li>
@@ -278,7 +284,7 @@
 <section class="hero mb-3 pt-5">
   <!-- Background Video -->
   <video autoplay muted loop playsinline class="w-100 h-100 object-fit-cover position-absolute top-0 start-0" style="z-index: 0;">
-    <source src="docs/ba" type="video/mp4">
+    <source src="docs/banner_home.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 
@@ -309,7 +315,7 @@
 <!--services section start-->
 
 
-<section class="mt-5  shadow p-3 mb-5 bg-body-tertiary rounded">
+<section class="mt-5">
    <h2 class="title text-center mb-4">Our Services</h2>
     <div class="container">
         <div class="row">
@@ -356,14 +362,89 @@
          <a href="services.html" class="btn btn-lg mt-3">View All Sevices</a>
          </center>
     </div>
+
+    <!--Review Section Start-->
+<section class="mt-5 shadow p-3 mb-5 bg-body-tertiary rounded">
+  <div class="container">
+    <h1 class="d-flex justify-content-center mb-5 t-text">What Our Clients Say</h1>
+    
+    <div id="reviewCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+
+        <!-- Review 1 -->
+        <div class="carousel-item active">
+          <div class="card mx-auto text-center p-3" style="max-width: 500px; background:#f8eaf2;">
+            <img src="images/shreya_team.jpg" alt="Client 1" 
+                 class="rounded-circle mb-2 border border-1 border-light" width="40" height="40">
+            <h6 class="card-title mb-1">Priya Sharma</h6>
+            <p class="text-muted mb-2" style="font-size:0.8rem;">Wedding Event</p>
+            <p class="card-text" style="font-size:0.9rem;">
+              <i class="bi bi-quote" style="color:#d63384; font-size: 1.1rem;"></i>
+              EverAfter Planners made our wedding absolutely magical! Everything was perfectly organized, and we didn’t have to worry about a thing.
+            </p>
+            <div class="mt-2 text-warning fs-6">
+              ⭐⭐⭐⭐⭐
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="carousel-item">
+          <div class="card mx-auto text-center p-3" style="max-width: 500px; background:#f8eaf2;">
+            <img src="images/client2.jpg" alt="Client 2" 
+                 class="rounded-circle mb-2 border border-1 border-light" width="40" height="40">
+            <h6 class="card-title mb-1">Amit Verma</h6>
+            <p class="text-muted mb-2" style="font-size:0.8rem;">Corporate Event</p>
+            <p class="card-text" style="font-size:0.9rem;">
+              <i class="bi bi-quote" style="color:#d63384; font-size: 1.1rem;"></i>
+              Professional and seamless service! Our corporate event was a huge success, and our clients were extremely impressed.
+            </p>
+            <div class="mt-2 text-warning fs-6">
+              ⭐⭐⭐⭐⭐
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="carousel-item">
+          <div class="card mx-auto text-center p-3" style="max-width: 500px; background:#f8eaf2;">
+            <img src="images/client3.jpg" alt="Client 3" 
+                 class="rounded-circle mb-2 border border-1 border-light" width="40" height="40">
+            <h6 class="card-title mb-1">Rina Patel</h6>
+            <p class="text-muted mb-2" style="font-size:0.8rem;">Birthday Party</p>
+            <p class="card-text" style="font-size:0.9rem;">
+              <i class="bi bi-quote" style="color:#d63384; font-size: 1.1rem;"></i>
+              My daughter’s birthday party was unforgettable! The decorations and arrangements were just perfect.
+            </p>
+            <div class="mt-2 text-warning fs-6">
+              ⭐⭐⭐⭐☆
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Carousel Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#reviewCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true" style="background-color:#d63384; border-radius:50%;"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#reviewCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true" style="background-color:#d63384; border-radius:50%;"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+</section>
+<!--Review Section End-->
      
     <!--FAQ question starts-->
-  
-    <section class="mt-5 mb-4">
-  <div class="container">
+
+    <section class="mt-5  ">
+  <div class="container mb-5">
     <div class="row">
       <div class="col-md-12">
-        <h2 style="color:#d63384">Plan Your Perfect Event With Us</h2>
+        <h2 class="title text-center mb-4">Plan Your Perfect Event With Us</h2>
         <div class="accordion" id="accordionExample">
   <div class="accordion-item">
     <h2 class="accordion-header">
@@ -482,7 +563,7 @@
             </p>
 
             <!-- Social Media Icons BELOW Email -->
-            <div class="d-flex gap-3 mt-3">
+            <div class="footer_socials d-flex gap-3 mt-3">
               <a href="https://www.instagram.com/" target="_blank" style="color:#E1306C;" class="fs-4">
                 <i class="bi bi-instagram"></i>
               </a>
@@ -493,6 +574,7 @@
                 <i class="bi bi-twitter"></i>
               </a>
             </div>
+
           </div>
 
         </div>
@@ -507,8 +589,6 @@
       </div>
     </section>
   </footer>
-
-<!--footer end-->
 
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous">
     </script> 
