@@ -15,7 +15,26 @@
       position: relative;
       min-height: 100vh;
     }
-
+    .form-control {
+  border-radius: 12px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  transition: 0.3s ease;
+}
+.form-control:focus {
+  border-color: #d63384;
+  box-shadow: 0 0 8px rgba(214, 51, 132, 0.3);
+}
+.form-select{
+  border-radius: 12px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  transition: 0.3s ease;
+}
+.form-select:focus {
+  border-color: #d63384;
+  box-shadow: 0 0 8px rgba(214, 51, 132, 0.3);
+}
     /* Form Section */
     .form-section {
       padding: 150px 20px;
@@ -161,7 +180,7 @@
 
           <div class="mb-3">
             <label class="form-label">Gender:</label><br>
-            <div class="form-check form-check-inline">
+            <div class="form-check form-check-inline" >
               <input class="form-check-input" type="radio" name="gender" id="male" value="male">
               <label class="form-check-label" for="male">Male</label>
             </div>
@@ -187,7 +206,15 @@
                 <option>Wedding</option>
                 <option>Birthday</option>
                 <option>Corporate</option>
-                <option>Engagement</option>
+                <option>Baby Showers</option>
+                <option>Pre-Wedding</option>
+                <option>Kids Theme Parties</option>
+                <option>Get-Togethers</option>
+                <option>College-Festivals</option>
+                <option>Conferences</option>
+                 <option>Award Nights</option>
+                <option>Team-Building</option>
+                <option>Product Launches</option>
                 <option>Other</option>
               </select>
               <span class="text-danger" id="typeError"></span>
